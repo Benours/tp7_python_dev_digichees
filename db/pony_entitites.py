@@ -50,7 +50,7 @@ class Order(db.Entity):
 class Conditioning(db.Entity):
     _table_ = "t_conditioning"
     tag = Required(str)
-    weight = Required(int)
+    weightTag = Required("WeightTag")
     price = Required(float)
     order = Set(Order)
     object = Set("Object")
@@ -65,7 +65,7 @@ class Object(db.Entity):
     _table_ = "t_object"
     name = Required(str)
     height = Required(int)
-    weight = Required(int)
+    weight = Required("Weight")
     description = Required(str)
     detailOrder = Set(DetailOrder)
     price = Required("Price")
@@ -102,7 +102,15 @@ class Shop(db.Entity):
     date = Required(date)
     object = Set(Object)
     
+class Weight(db.Entity):
+    _table_ = "t_weight"
+    values = Required(float)
+    object = Set(Object)
 
+class WeightTag(db.Entity):
+    _table_ = "t_weight_tag"
+    values = Required(float)
+    conditioning = Set(Conditioning)
 
 
 db.generate_mapping(create_tables=True)
