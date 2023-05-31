@@ -110,7 +110,7 @@ class Weight(db.Entity):
 
 class WeightTag(db.Entity):
     _table_ = "t_weight_tag"
-    values = Required(float)
+    tagValues = Required(float)
     conditioning = Set(Conditioning)
 
 db.generate_mapping(create_tables=True)
