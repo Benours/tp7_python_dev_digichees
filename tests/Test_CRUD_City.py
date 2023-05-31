@@ -32,7 +32,9 @@ class testCityCrud(unittest.TestCase):
         self.id = list(res2[len(res2) - 1])[0]
         res=updateCity(self.id, '46042', 'Cahors', 'Lot')
         self.assertEquals(res, 'Successful Updated')
-        self.assertEquals(res2[0], (self.id, '46042', 'Cahors', 'Lot'))
+        res2 = getCity()
+        res = res2[len(res2) - 1]
+        self.assertEquals(res, (self.id, '46042', 'Cahors', 'Lot'))
 
     def testDelete(self):
         #tout comme l'update, on a besoin de l'id du dernier emplacement pour supprimer
