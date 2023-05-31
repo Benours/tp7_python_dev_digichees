@@ -9,7 +9,7 @@ def test_get_all_users():
     assert response.status_code == 200
 
 def test_get_user_by_id():
-    response = client.get("/user/1")
+    response = client.get("/user/get/1")
     assert response.status_code == 404
 
 def test_add_user():
@@ -22,14 +22,14 @@ def test_add_user():
     assert response.status_code, 200
 
 def test_update_user():
-    response = client.put("/users/1", json={
+    response = client.put("/user/update/1", json={
         "email": "updated@example.com",
         "password": "newpassword"
     })
     assert response.status_code, 200
 
 def test_delete_user():
-    response = client.delete("/users/1")
+    response = client.delete("/user/del/1")
     assert response.status_code, 200
 
 if __name__ == "__main__":

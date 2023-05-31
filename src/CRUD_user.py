@@ -16,7 +16,7 @@ async def get_all_users():
 
 
 # Get user by id
-@router.get("/{id}")
+@router.get("/get/{id}")
 async def get_user_by_id(id: int):
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_user WHERE id = %s", (id,))
@@ -43,7 +43,7 @@ async def add_user(email: str, password: str, firstname: str = "", lastname: str
 
 
 # Update user
-@router.put("/{id}")
+@router.put("/update/{id}")
 async def update_user(id: int, email: str, password: str, firstname: str = "", lastname: str = ""):
     cursor = conn.cursor()
     cursor.execute(
@@ -58,7 +58,7 @@ async def update_user(id: int, email: str, password: str, firstname: str = "", l
 
 
 # Delete user
-@router.delete("/{id}")
+@router.delete("/del/{id}")
 async def delete_user(id: int):
     cursor = conn.cursor()
     cursor.execute("DELETE FROM t_user WHERE id = %s", (id,))
