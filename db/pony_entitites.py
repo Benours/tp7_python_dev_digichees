@@ -1,7 +1,7 @@
 from db.pony_config import *
 from datetime import date
 
-
+#création de la base de donnée
 class User(db.Entity):
     _table_ = "t_user"
     email = Required(str, unique=True)
