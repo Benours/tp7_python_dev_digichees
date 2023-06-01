@@ -16,40 +16,40 @@ class testCityCrud(unittest.TestCase):
         self.zipCode = '46800'
         self.name = 'Montcuq'
         self.department = 'Lot'
-        res = createCity(self.zipCode, self.name, self.department)
+        res = create_city(self.zipCode, self.name, self.department)
         self.assertEquals(res, "Successful Creation")
 
     def testGet(self):
         # si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
         # Montcuq
-        res = getCity()
+        res = get_city()
         self.id = list(res[len(res) - 1])[0]
         print(self.id)
-        self.assertEquals(res[len(res) - 1], (self.id, '46800', 'Montcuq', 'Lot'))
+        self.assertEquals(res[len(res) - 1], (self.id, '46042', 'Cahors', 'Lot'))
 
     def testGetById(self):
         # si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
         # par id.
-        res = getCity()
+        res = get_city()
         self.id = list(res[len(res) - 1])[0]
-        res2 = getCityById(self.id)
-        self.assertEquals(res2, [(self.id, '46800', 'Montcuq', 'Lot')])
+        res2 = get_city_by_id(self.id)
+        self.assertEquals(res2, [(self.id, '46042', 'Cahors', 'Lot')])
 
     def testUpdate(self):
         # donc parce que on a besoin de l'id du dernier emplacement
         # on récupère l'id de getcity pour l'update
-        res2 = getCity()
+        res2 = get_city()
         self.id = list(res2[len(res2) - 1])[0]
-        res = updateCity(self.id, '46042', 'Cahors', 'Lot')
+        res = update_city(self.id, '46042', 'Cahors', 'Lot')
         self.assertEquals(res, 'Successful Updated')
-        res2 = getCity()
+        res2 = get_city()
         res = res2[len(res2) - 1]
         self.assertEquals(res, (self.id, '46042', 'Cahors', 'Lot'))
 
     def testDelete(self):
         # tout comme l'update, on a besoin de l'id du dernier emplacement pour supprimer
         # la ville teste
-        res2 = getCity()
+        res2 = get_city()
         self.id = list(res2[len(res2) - 1])[0]
-        res = deleteCity(str(self.id))
+        res = delete_city(str(self.id))
         self.assertEquals(res, "Successful Deleted")

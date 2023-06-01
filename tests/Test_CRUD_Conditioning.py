@@ -1,6 +1,6 @@
 import unittest
-from src.CRUD_Conditioning import *
-from src.CRUD_WeightTag import *
+from src.CRUD_conditioning import *
+from src.CRUD_weight_tag import *
 
 
 # La class permet de regrouper les tes à effectué
@@ -17,16 +17,16 @@ class testConditioningCrud(unittest.TestCase):
         self.tag = "herta"
         self.weight = 4.0
         self.price = 5.0
-        res = createConditioning(self.tag, self.weight, self.price)
+        res = create_conditioning(self.tag, self.weight, self.price)
         self.assertEquals(res, "Successful Creation")
 
     def testGet(self):
         # si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
         # Herta
-        res = getConditioning()
+        res = get_conditioning()
         self.id = list(res[len(res) - 1])[0]
         print(self.id)
-        res2 = getWeightTag()
+        res2 = get_weight_tag()
         self.id2 = list(res2[len(res2) - 1])[0]
         print(self.id2)
         self.assertEquals(res[len(res) - 1], (self.id, "herta", self.id2, 5.0))
@@ -34,25 +34,25 @@ class testConditioningCrud(unittest.TestCase):
     def testGetById(self):
         # si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
         # par id.
-        res = getConditioning()
+        res = get_conditioning()
         self.id = list(res[len(res) - 1])[0]
         # print(self.id)
-        res2 = getWeightTag()
+        res2 = get_weight_tag()
         self.id2 = list(res2[len(res2) - 1])[0]
-        res3 = getConditioningById(self.id)
+        res3 = get_conditioning_by_id(self.id)
         self.assertEquals(res3, [(self.id, "herta", self.id2, 5.0)])
 
     def testUpdate(self):
         # donc parce que on a besoin de l'id du dernier emplacement
         # on récupère l'id de getConditioning pour l'update
-        res2 = getConditioning()
+        res2 = get_conditioning()
         self.id = list(res2[len(res2) - 1])[0]
-        res = updateConditioning(self.id, "jambon", 1.0, 1.0)
+        res = update_conditioning(self.id, "jambon", 1.0, 1.0)
         self.assertEquals(res, 'Successful Updated')
         # on recupère l'id de weightTag parce que les tables sont liés
-        res2 = getConditioning()
+        res2 = get_conditioning()
         res = res2[len(res2) - 1]
-        res3 = getWeightTag()
+        res3 = get_weight_tag()
         self.id2 = list(res3[len(res3) - 1])[0]
         # print(self.id)
         self.assertEquals(res, (self.id, "jambon", self.id2, 1.0))
@@ -60,7 +60,7 @@ class testConditioningCrud(unittest.TestCase):
     def testDelete(self):
         # tout comme l'update, on a besoin de l'id du dernier emplacement pour supprimer
         # le tag test
-        res2 = getConditioning()
+        res2 = get_conditioning()
         self.id = list(res2[len(res2) - 1])[0]
-        res = deleteConditioning(self.id)
+        res = delete_conditioning(self.id)
         self.assertEquals(res, "Successful Deleted")
