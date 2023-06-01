@@ -10,9 +10,9 @@ router = APIRouter()
 async def get_all_objects():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_object")
-    users = cursor.fetchall()
+    objects = cursor.fetchall()
     cursor.close()
-    return users
+    return objects
 
 
 # Get object by id

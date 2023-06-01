@@ -1,3 +1,6 @@
 pony
 pytest
 pymysql
+fastapi
+uvicorn
+mysql-connector-python

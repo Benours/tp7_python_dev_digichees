@@ -104,7 +104,7 @@ class Shop(db.Entity):
     
 class Weight(db.Entity):
     _table_ = "t_weight"
-    values = Required(float)
+    w_val = Required(float)
     object = Set(Object)
 
 class WeightTag(db.Entity):
