@@ -18,7 +18,7 @@ def create_conditioning(tag: str, weight: float, price: float):
     weight = list(weightTag[len(weightTag) - 1])[0]
     conditioningInsert = """INSERT INTO t_conditioning(
         tag,
-        weight,
+        weightTag,
         price)
         VALUES (%s,%s,%s)"""
     cursor.execute(conditioningInsert, (tag, weight, price))

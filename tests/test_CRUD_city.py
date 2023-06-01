@@ -25,7 +25,7 @@ class testCityCrud(unittest.TestCase):
         res = get_city()
         self.id = list(res[len(res) - 1])[0]
         print(self.id)
-        self.assertEquals(res[len(res) - 1], (self.id, '46800', 'Montcuq', 'Lot'))
+        self.assertEquals(res[len(res) - 1], (self.id, '46042', 'Cahors', 'Lot'))
 
     def testGetById(self):
         # si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
@@ -33,7 +33,7 @@ class testCityCrud(unittest.TestCase):
         res = get_city()
         self.id = list(res[len(res) - 1])[0]
         res2 = get_city_by_id(self.id)
-        self.assertEquals(res2, [(self.id, '46800', 'Montcuq', 'Lot')])
+        self.assertEquals(res2, [(self.id, '46042', 'Cahors', 'Lot')])
 
     def testUpdate(self):
         # donc parce que on a besoin de l'id du dernier emplacement
