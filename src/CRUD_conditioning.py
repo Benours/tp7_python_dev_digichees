@@ -10,7 +10,7 @@ app = APIRouter()
 
 @app.post("/post")
 def create_conditioning(tag: str, weight: float, price: float):
-    # on doit créer un nouvelle ville pour cela on a un l'id qui est auto incrémentable
+    # on doit créer un nouveau conditionnement pour cela on a un l'id qui est auto incrémentable
     # nous avons plus qu'a créer un cursor pour mettre une requete sql pour inserer les données
     cursor = conn.cursor()
     create_weight_tag(weight)
@@ -48,7 +48,7 @@ def get_conditioning_by_id(id: int):
 
 @app.put("/put")
 def update_conditioning(id: int, tag: str, weight: float, price: float):
-    # pour le update, nous allons modifier les parametres. mais pour cela il faut
+    # pour le update, nous allons modifier les parametres: nom(Tag), weight(poid), price(prix). mais pour cela il faut
     # renseigner l'id qui est unique puisque qu'il va être liée au client
     cursor = conn.cursor()
     condition=get_conditioning().copy()
