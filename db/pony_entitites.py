@@ -113,4 +113,4 @@ class WeightTag(db.Entity):
     conditioning = Set(Conditioning)
 
 
-db.generate_mapping(create_tables=True)
+#db.generate_mapping(create_tables=True)
