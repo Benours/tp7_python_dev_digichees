@@ -5,8 +5,8 @@ from src.connect import conn
 app = APIRouter()
 
 @app.post("/post")
-def createWeightTag(tagValues: float):
-    #on doit créer un nouvelle ville pour cela on a un l'id qui est auto incrémentable
+def create_weight_tag(tagValues: float):
+    #on doit créer un nouveau tag pour cela on a un l'id qui est auto incrémentable
     #nous avons plus qu'a créer un cursor pour mettre une requete sql pour inserer les données
     cursor = conn.cursor()
     weightTagInsert = """INSERT INTO t_weight_tag (tagValues) VALUES (%s)""" % tagValues
@@ -16,7 +16,7 @@ def createWeightTag(tagValues: float):
 
 
 @app.get('/getall')
-def getWeightTag():
+def get_weight_tag():
     #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_weight_tag
     cursor = conn.cursor()
     weightTagGet = """SELECT * FROM t_weight_tag"""
@@ -27,7 +27,7 @@ def getWeightTag():
     return city
 
 @app.get('/getbyid')
-def getWeightTagById(id: int):
+def get_weight_tag_by_id(id: int):
     #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_weight_tag
     cursor = conn.cursor()
     weightTagGet = "SELECT * FROM t_weight_tag WHERE id=%s" % (id)
@@ -38,7 +38,7 @@ def getWeightTagById(id: int):
     return weightTag
 
 @app.put("/put")
-def updateWeightTag(id: int, tagValues: float):
+def update_weight_tag(id: int, tagValues: float):
     #pour le update, nous allons modifier le parametre: valeur(tagValues). mais pour cela il faut
     #renseigner l'id qui est unique puisque qu'il va être liée au client
     cursor = conn.cursor()
@@ -49,7 +49,7 @@ def updateWeightTag(id: int, tagValues: float):
 
 
 @app.delete("/delete")
-def deleteWeightTag(id: int):
+def delete_weight_tag(id: int):
     #pour le delete, le cursor va avoir la requete sql pour supprimer la donnée
     #lié à l'id associé
     cursor = conn.cursor()

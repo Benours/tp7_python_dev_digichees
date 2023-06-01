@@ -1,6 +1,6 @@
 from src.connect import conn
 from fastapi import APIRouter, HTTPException
-import secrets
+from src.CRUD_weight import add_weight, get_weight_by_w_val
 
 router = APIRouter()
 
@@ -30,11 +30,13 @@ async def get_object_by_id(id: int):
 
 # Add object
 @router.post("/add")
-async def add_object(name: str, height: int, weight: int, description: str, price: int, stockline: int, shop: int, conditioning: int):
+async def add_object(name: str, height: int, w_val: float, description: str, price: int, stockline: int, shop: int, conditioning: int):
     cursor = conn.cursor()
+    await add_weight(w_val)
+    weight = await get_weight_by_w_val(w_val)
     cursor.execute(
         "INSERT INTO t_object (name, height, weight, description, price, stockline, shop, conditioning) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
-        (name, height, weight, description, price, stockline, shop, conditioning)
+        (name, height, weight[0], description, price, stockline, shop, conditioning)
     )
     conn.commit()
     cursor.close()
@@ -43,8 +45,10 @@ async def add_object(name: str, height: int, weight: int, description: str, pric
 
 # Update object
 @router.put("/update/{id}")
-async def update_object(id: int, name: str, height: int, weight: int, description: str, price: int, stockline: int, shop: int, conditioning: int):
+async def update_object(id: int, name: str, height: int, w_val: int, description: str, price: int, stockline: int, shop: int, conditioning: int):
     cursor = conn.cursor()
+    await add_weight(w_val)
+    weight = await get_weight_by_w_val(w_val)
     cursor.execute(
         "UPDATE t_object SET name = %s, height = %s, weight = %s, description = %s, price = %s, stockline = %s, shop = %s, conditioning = %s WHERE id = %s",
         (name, height, weight, description, price, stockline, shop, conditioning, id)

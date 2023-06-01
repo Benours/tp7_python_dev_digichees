@@ -11,7 +11,6 @@ async def get_all_weights():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_weight")
     weights = cursor.fetchall()
-    cursor.close()
     return weights
 
 
@@ -21,7 +20,17 @@ async def get_weight_by_id(id: int):
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_weight WHERE id = %s", (id,))
     weight = cursor.fetchone()
-    cursor.close()
+    if weight:
+        return weight
+    else:
+        raise HTTPException(status_code=404, detail="Weight not found")
+
+# Get weight by values
+@router.get("/get/{w_val}")
+async def get_weight_by_w_val(w_val: float):
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM t_weight WHERE w_val = %s", (w_val,))
+    weight = cursor.fetchone()
     if weight:
         return weight
     else:
@@ -34,7 +43,6 @@ async def add_weight(w_val: float):
     cursor = conn.cursor()
     cursor.execute("INSERT INTO t_weight (w_val) VALUES (%s)", (w_val,))
     conn.commit()
-    cursor.close()
     return {"message": "Weight add successfully"}
 
 
@@ -49,7 +57,6 @@ async def update_weight(id: int, w_val: float):
     if cursor.rowcount == 0:
         raise HTTPException(status_code=404, detail="Weight not found")
     conn.commit()
-    cursor.close()
     return {"message": "Weight update successfully"}
 
 
@@ -61,5 +68,4 @@ async def delete_weight(id: int):
     if cursor.rowcount == 0:
         raise HTTPException(status_code=404, detail="Weight not found")
     conn.commit()
-    cursor.close()
     return {"message": "Weight delete successfully"}
