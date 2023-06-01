@@ -15,7 +15,7 @@ async def get_all_users():
     return users
 
 
-# Get user by id
+# Get user with id
 @router.get("/get/{id}")
 async def get_user_by_id(id: int):
     cursor = conn.cursor()
@@ -27,22 +27,33 @@ async def get_user_by_id(id: int):
     else:
         raise HTTPException(status_code=404, detail="User not found")
 
+@router.get("/get/{email}")
+async def get_user_by_email(email: str):
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM t_user WHERE email = %s", (email,))
+    user = cursor.fetchone()
+    cursor.close()
+    if user:
+        return user
+    else:
+        raise HTTPException(status_code=404, detail="User not found")
 
-# Add user
+
+# Add user with email, password and optional firstname and lastname
 @router.post("/add")
-async def add_user(email: str, password: str, firstname: str = "", lastname: str = ""):
+async def add_user(email: str, password: str, salt: str, firstname: str = "", lastname: str = ""):
     cursor = conn.cursor()
     token = secrets.token_urlsafe(16)
     cursor.execute(
-        "INSERT INTO t_user (email, password, firstname, lastname, token) VALUES (%s, %s, %s, %s, %s)",
-        (email, password, firstname, lastname, token)
+        "INSERT INTO t_user (email, password, salt, firstname, lastname, token) VALUES (%s, %s, %s, %s, %s, %s)",
+        (email, password, salt, firstname, lastname, token)
     )
     conn.commit()
     cursor.close()
     return {"message": "User add successfully"}
 
 
-# Update user
+# Update user with email, password and optional firstname and lastname and id to access
 @router.put("/update/{id}")
 async def update_user(id: int, email: str, password: str, firstname: str = "", lastname: str = ""):
     cursor = conn.cursor()
