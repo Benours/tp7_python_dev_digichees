@@ -4,6 +4,7 @@ from src.connect import conn
 
 app = APIRouter()
 
+# Create a new tag weight with tagvalues (weight)
 @app.post("/post")
 def create_weight_tag(tagValues: float):
     #on doit créer un nouveau tag pour cela on a un l'id qui est auto incrémentable
@@ -14,7 +15,7 @@ def create_weight_tag(tagValues: float):
     conn.commit()
     return "Successful Creation"
 
-
+# Get all the tag weight
 @app.get('/getall')
 def get_weight_tag():
     #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_weight_tag
@@ -26,6 +27,7 @@ def get_weight_tag():
         print(c)
     return city
 
+# Get a tag weight with id
 @app.get('/getbyid')
 def get_weight_tag_by_id(id: int):
     #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_weight_tag
@@ -37,6 +39,7 @@ def get_weight_tag_by_id(id: int):
         print(w)
     return weightTag
 
+# Modify a tag weight with tagvalues (weight) and id to access
 @app.put("/put")
 def update_weight_tag(id: int, tagValues: float):
     #pour le update, nous allons modifier le parametre: valeur(tagValues). mais pour cela il faut
@@ -47,7 +50,7 @@ def update_weight_tag(id: int, tagValues: float):
     conn.commit()
     return "Successful Updated"
 
-
+# Delete a tag weight
 @app.delete("/delete")
 def delete_weight_tag(id: int):
     #pour le delete, le cursor va avoir la requete sql pour supprimer la donnée

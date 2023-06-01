@@ -5,9 +5,9 @@ from src.CRUD_weight import router as weight_router
 from src.CRUD_weight_tag import app as weight_tag_router
 from src.CRUD_city import app as city_router
 from src.CRUD_conditioning import app as conditioning_router
-
 import uvicorn
 
+# Create the swagger
 app = FastAPI()
 
 # Include all routers in app
@@ -18,6 +18,6 @@ app.include_router(weight_tag_router, prefix="/weightTag", tags=["weightTag"])
 app.include_router(city_router, prefix="/city", tags=["city"])
 app.include_router(conditioning_router, prefix="/conditioning", tags=["conditioning"])
 
-
+# Launch uvicorn and access to swagger
 if __name__ == '__main__':
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -15,7 +15,7 @@ async def get_all_objects():
     return objects
 
 
-# Get object by id
+# Get object with id
 @router.get("/get/{id}")
 async def get_object_by_id(id: int):
     cursor = conn.cursor()
@@ -28,7 +28,7 @@ async def get_object_by_id(id: int):
         raise HTTPException(status_code=404, detail="Object not found")
 
 
-# Add object
+# Add object with name, height, w_val (weight), description, price, stockline, shop and conditioning
 @router.post("/add")
 async def add_object(name: str, height: int, w_val: float, description: str, price: int, stockline: int, shop: int, conditioning: int):
     cursor = conn.cursor()
@@ -43,7 +43,7 @@ async def add_object(name: str, height: int, w_val: float, description: str, pri
     return {"message": "Object add successfully"}
 
 
-# Update object
+# Update object with name, height, w_val (weight), description, price, stockline, shop and conditioning and id to access
 @router.put("/update/{id}")
 async def update_object(id: int, name: str, height: int, w_val: int, description: str, price: int, stockline: int, shop: int, conditioning: int):
     cursor = conn.cursor()

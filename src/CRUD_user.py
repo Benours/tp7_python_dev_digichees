@@ -15,7 +15,7 @@ async def get_all_users():
     return users
 
 
-# Get user by id
+# Get user with id
 @router.get("/get/{id}")
 async def get_user_by_id(id: int):
     cursor = conn.cursor()
@@ -28,7 +28,7 @@ async def get_user_by_id(id: int):
         raise HTTPException(status_code=404, detail="User not found")
 
 
-# Add user
+# Add user with email, password and optional firstname and lastname
 @router.post("/add")
 async def add_user(email: str, password: str, firstname: str = "", lastname: str = ""):
     cursor = conn.cursor()
@@ -42,7 +42,7 @@ async def add_user(email: str, password: str, firstname: str = "", lastname: str
     return {"message": "User add successfully"}
 
 
-# Update user
+# Update user with email, password and optional firstname and lastname and id to access
 @router.put("/update/{id}")
 async def update_user(id: int, email: str, password: str, firstname: str = "", lastname: str = ""):
     cursor = conn.cursor()

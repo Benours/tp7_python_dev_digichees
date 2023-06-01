@@ -8,6 +8,7 @@ app = APIRouter()
 # on import fastapi pour swagger et conn qui est dans connect.py qui
 # permet la connection avec la base de donnée
 
+# Create a new conditioning with tag, weight and price
 @app.post("/post")
 def create_conditioning(tag: str, weight: float, price: float):
     # on doit créer un nouveau conditionnement pour cela on a un l'id qui est auto incrémentable
@@ -26,6 +27,7 @@ def create_conditioning(tag: str, weight: float, price: float):
     return "Successful Creation"
 
 
+# Get all the conditioning
 @app.get('/getall')
 def get_conditioning():
     # pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_conditioning
@@ -37,6 +39,7 @@ def get_conditioning():
         print(c)
     return conditioning
 
+# Get one conditioning with id
 @app.get('/getbyid')
 def get_conditioning_by_id(id: int):
     # pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_conditioning
@@ -46,6 +49,7 @@ def get_conditioning_by_id(id: int):
     conditioning = cursor.fetchall()
     return conditioning
 
+# Modify conditioning information with tag, weight and price with id to access
 @app.put("/put")
 def update_conditioning(id: int, tag: str, weight: float, price: float):
     # pour le update, nous allons modifier les parametres: nom(Tag), weight(poid), price(prix). mais pour cela il faut
@@ -61,7 +65,7 @@ def update_conditioning(id: int, tag: str, weight: float, price: float):
     conn.commit()
     return "Successful Updated"
 
-
+# Delete a conditioning
 @app.delete("/delete")
 def delete_conditioning(id: int):
     # pour le delete, le cursor va avoir la requete sql pour supprimer la donnée

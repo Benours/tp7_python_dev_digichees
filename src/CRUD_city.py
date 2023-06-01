@@ -7,6 +7,7 @@ app = APIRouter()
 #on import fastapi pour swagger et conn qui est dans connect.py qui
 #permet la connection avec la base de donnée
 
+# Create a new city with ZIPCode, name and department
 @app.post("/post")
 def create_city(zipCode: str, name: str, department: str):
     #on doit créer un nouvelle ville pour cela on a un l'id qui est auto incrémentable
@@ -21,7 +22,7 @@ def create_city(zipCode: str, name: str, department: str):
     conn.commit()
     return "Successful Creation"
 
-
+# Get all the cities
 @app.get('/getall')
 def get_city():
     #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_city
@@ -33,6 +34,7 @@ def get_city():
         print(c)
     return city
 
+# Return one city with id
 @app.get('/getbyid')
 def get_city_by_id(id: int):
     #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_city
@@ -42,6 +44,7 @@ def get_city_by_id(id: int):
     city = cursor.fetchall()
     return city
 
+# Modify city information with this ZIPCode, name and department and id to access
 @app.put("/put")
 def update_city(id: int, zipCode: str, name: str, department: str):
     #pour le update, nous allons modifier les 3 parametres: code postal(zipCode),
@@ -53,7 +56,7 @@ def update_city(id: int, zipCode: str, name: str, department: str):
     conn.commit()
     return "Successful Updated"
 
-
+# Delete a city with id
 @app.delete("/delete")
 def delete_city(id: int):
     #pour le delete, le cursor va avoir la requete sql pour supprimer la donnée
