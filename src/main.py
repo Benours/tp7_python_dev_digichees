@@ -23,3 +23,5 @@ app.include_router(authentification_router, prefix="/authentification", tags=["a
 # Launch uvicorn and access to swagger
 if __name__ == '__main__':
     uvicorn.run(app, host="0.0.0.0", port=8000)
+from src.Impress import app as impress_router
+app.include_router(impress_router, prefix="/impress", tags=["impress"])

@@ -47,6 +47,15 @@ async def add_user(email: str, password: str, salt: str, firstname: str = "", la
     cursor.execute(
         "INSERT INTO t_user (email, password, salt, firstname, lastname, token) VALUES (%s, %s, %s, %s, %s, %s)",
         (email, password, salt, firstname, lastname, token)
+
+# Add user
+@router.post("/add")
+async def add_user(email: str, password: str, firstname: str = "", lastname: str = ""):
+    cursor = conn.cursor()
+    token = secrets.token_urlsafe(16)
+    cursor.execute(
+        "INSERT INTO t_user (email, password, firstname, lastname, token) VALUES (%s, %s, %s, %s, %s)",
+        (email, password, firstname, lastname, token)
     )
     conn.commit()
     cursor.close()
@@ -54,6 +63,7 @@ async def add_user(email: str, password: str, salt: str, firstname: str = "", la
 
 
 # Update user with email, password and optional firstname and lastname and id to access
+# Update user
 @router.put("/update/{id}")
 async def update_user(id: int, email: str, password: str, firstname: str = "", lastname: str = ""):
     cursor = conn.cursor()

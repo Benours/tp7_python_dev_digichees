@@ -1,5 +1,6 @@
 from src.connect import conn
 from fastapi import APIRouter, HTTPException
+import secrets
 
 router = APIRouter()
 
@@ -25,6 +26,7 @@ async def get_weight_by_id(id: int):
         raise HTTPException(status_code=404, detail="Weight not found")
 
 # Get weight with w_val (weight)
+# Get weight by values
 @router.get("/get/{w_val}")
 async def get_weight_by_w_val(w_val: float):
     cursor = conn.cursor()
@@ -37,6 +39,7 @@ async def get_weight_by_w_val(w_val: float):
 
 
 # Add weight with w_val (weight)
+# Add weight
 @router.post("/add")
 async def add_weight(w_val: float):
     cursor = conn.cursor()
@@ -46,6 +49,7 @@ async def add_weight(w_val: float):
 
 
 # Update weight with w_val (weight)
+# Update weight
 @router.put("/update/{id}")
 async def update_weight(id: int, w_val: float):
     cursor = conn.cursor()
