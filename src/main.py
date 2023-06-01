@@ -5,6 +5,7 @@ from src.CRUD_weight import router as weight_router
 from src.CRUD_weight_tag import app as weight_tag_router
 from src.CRUD_city import app as city_router
 from src.CRUD_conditioning import app as conditioning_router
+from src.Impress import app as impress_router
 
 import uvicorn
 
@@ -17,7 +18,7 @@ app.include_router(weight_router, prefix="/weight", tags=["weight"])
 app.include_router(weight_tag_router, prefix="/weightTag", tags=["weightTag"])
 app.include_router(city_router, prefix="/city", tags=["city"])
 app.include_router(conditioning_router, prefix="/conditioning", tags=["conditioning"])
-
+app.include_router(impress_router, prefix="/impress", tags=["impress"])
 
 if __name__ == '__main__':
     uvicorn.run(app, host="127.0.0.1", port=8000)
