@@ -3,7 +3,7 @@ from src.CRUD_weight_tag import *
 
 
 # La class permet de regrouper les tests à effectué
-class test_Weight_Tag_Crud(unittest.TestCase):
+class TestWeightTagCrud(unittest.TestCase):
     # Mais ne pas lancé le test testWeightTagCrud parce que
     # le lancement ce fait dans le désordre et ne créer pas
     # le PoidV avant de le supprimer ou le modifier.
