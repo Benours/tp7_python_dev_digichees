@@ -6,6 +6,7 @@ class User(db.Entity):
     _table_ = "t_user"
     email = Required(str, unique=True)
     password = Required(str)
+    salt = Required(str)
     firstname = Optional(str)
     lastname = Optional(str)
     token = Required(str, unique=True)
