@@ -47,6 +47,7 @@ async def add_user(email: str, password: str, salt: str, firstname: str = "", la
     cursor.execute(
         "INSERT INTO t_user (email, password, salt, firstname, lastname, token) VALUES (%s, %s, %s, %s, %s, %s)",
         (email, password, salt, firstname, lastname, token)
+    )
 
 # Add user
 @router.post("/add")
