@@ -15,7 +15,7 @@ def createWeightTag(tagValues: float):
     return "Successful Creation"
 
 
-@app.get('/get')
+@app.get('/getall')
 def getWeightTag():
     #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_weight_tag
     cursor = conn.cursor()
@@ -26,10 +26,20 @@ def getWeightTag():
         print(c)
     return city
 
+@app.get('/getbyid')
+def getWeightTagById(id: int):
+    #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_weight_tag
+    cursor = conn.cursor()
+    weightTagGet = "SELECT * FROM t_weight_tag WHERE id=%s" % (id)
+    cursor.execute(weightTagGet)
+    weightTag = cursor.fetchall()
+    for w in weightTag:
+        print(w)
+    return weightTag
 
 @app.put("/put")
 def updateWeightTag(id: int, tagValues: float):
-    #pour le update, nous allons modifier le parametre: valeur(values). mais pour cela il faut
+    #pour le update, nous allons modifier le parametre: valeur(tagValues). mais pour cela il faut
     #renseigner l'id qui est unique puisque qu'il va être liée au client
     cursor = conn.cursor()
     weightTagUpdate = "UPDATE t_weight_tag SET tagValues=%s WHERE id=%s" % (tagValues, id)

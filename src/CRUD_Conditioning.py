@@ -26,21 +26,29 @@ def createConditioning(tag: str, weight: float, price: float):
     return "Successful Creation"
 
 
-@app.get('/get')
+@app.get('/getall')
 def getConditioning():
     # pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_conditioning
     cursor = conn.cursor()
     conditioningGet = """SELECT * FROM t_conditioning"""
     cursor.execute(conditioningGet)
-    city = cursor.fetchall()
-    for c in city:
+    conditioning = cursor.fetchall()
+    for c in conditioning:
         print(c)
-    return city
+    return conditioning
 
+@app.get('/getbyid')
+def getConditioningById(id: int):
+    # pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_conditioning
+    cursor = conn.cursor()
+    conditioningGet = "SELECT * FROM t_conditioning WHERE id=%s" % (id)
+    cursor.execute(conditioningGet)
+    conditioning = cursor.fetchall()
+    return conditioning
 
 @app.put("/put")
 def updateConditioning(id: int, tag: str, weight: float, price: float):
-    # pour le update, nous allons modifier les parametres: . mais pour cela il faut
+    # pour le update, nous allons modifier les parametres. mais pour cela il faut
     # renseigner l'id qui est unique puisque qu'il va être liée au client
     cursor = conn.cursor()
     condition=getConditioning().copy()

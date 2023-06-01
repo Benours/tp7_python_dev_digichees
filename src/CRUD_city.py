@@ -22,7 +22,7 @@ def createCity(zipCode: str, name: str, department: str):
     return "Successful Creation"
 
 
-@app.get('/get')
+@app.get('/getall')
 def getCity():
     #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_city
     cursor = conn.cursor()
@@ -33,6 +33,14 @@ def getCity():
         print(c)
     return city
 
+@app.get('/getbyid')
+def getCityById(id: int):
+    #pour le get le cursor aura pour requete sql un select * pour tout avoir dans la table t_city
+    cursor = conn.cursor()
+    cityGet = "SELECT * FROM t_city WHERE id=%s" % (id)
+    cursor.execute(cityGet)
+    city = cursor.fetchall()
+    return city
 
 @app.put("/put")
 def updateCity(id: int, zipCode: str, name: str, department: str):

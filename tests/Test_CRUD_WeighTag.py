@@ -20,8 +20,17 @@ class testWeightTagCrud(unittest.TestCase):
         #2.0
         res=getWeightTag()
         self.id=list(res[len(res)-1])[0]
-        print(self.id)
+        #print(self.id)
         self.assertEquals(res[len(res)-1], (self.id,2.0))
+
+    def testGetById(self):
+        #si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
+        #par id.
+        res=getWeightTag()
+        self.id=list(res[len(res)-1])[0]
+        #print(self.id)
+        res2=getWeightTagById(self.id)
+        self.assertEquals(res2, [(self.id,2.0)])
 
     def testUpdate(self):
         #donc parce que on a besoin de l'id du dernier emplacement
