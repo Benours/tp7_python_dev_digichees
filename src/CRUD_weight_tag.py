@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+from fastapi import APIRouter
 
-from src.Connect import conn
+from src.connect import conn
 
-app = FastAPI()
+app = APIRouter()
 
 @app.post("/post")
 def createWeightTag(tagValues: float):
@@ -57,8 +57,3 @@ def deleteWeightTag(id: int):
     cursor.execute(weightTagDelete)
     conn.commit()
     return "Successful Deleted"
-
-if __name__ == '__main__':
-    import uvicorn
-
-    uvicorn.run(app, host='127.0.0.1', port=8282)

@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+from fastapi import APIRouter
 
-from src.Connect import conn
+from src.connect import conn
 
-app = FastAPI()
+app = APIRouter()
 
 #on import fastapi pour swagger et conn qui est dans connect.py qui
 #permet la connection avec la base de donnée
@@ -65,7 +65,3 @@ def deleteCity(id: int):
     return "Successful Deleted"
 
 
-if __name__ == '__main__':
-    import uvicorn
-
-    uvicorn.run(app, host='127.0.0.1', port=8282)

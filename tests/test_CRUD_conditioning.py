@@ -1,6 +1,6 @@
 import unittest
-from src.CRUD_Conditioning import *
-from src.CRUD_WeightTag import *
+from src.CRUD_conditioning import *
+from src.CRUD_weight_tag import *
 
 
 # La class permet de regrouper les tes à effectué

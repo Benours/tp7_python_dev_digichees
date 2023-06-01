@@ -1,8 +1,8 @@
-from fastapi import FastAPI
-from src.CRUD_WeightTag import createWeightTag, getWeightTag, updateWeightTag, deleteWeightTag
-from src.Connect import conn
+from fastapi import APIRouter
+from src.CRUD_weight_tag import createWeightTag, getWeightTag, updateWeightTag, deleteWeightTag
+from src.connect import conn
 
-app = FastAPI()
+app = APIRouter()
 
 
 # on import fastapi pour swagger et conn qui est dans connect.py qui
@@ -79,7 +79,3 @@ def deleteConditioning(id: int):
     return "Successful Deleted"
 
 
-if __name__ == '__main__':
-    import uvicorn
-
-    uvicorn.run(app, host='127.0.0.1', port=8282)

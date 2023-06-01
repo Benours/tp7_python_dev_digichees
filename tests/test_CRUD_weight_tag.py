@@ -1,5 +1,5 @@
 import unittest
-from src.CRUD_WeightTag import *
+from src.CRUD_weight_tag import *
 #La class permet de regrouper les tes à effectué
 class testWeightTagCrud(unittest.TestCase):
     #Mais ne pas lancé le test testWeightTagCrud parce que
