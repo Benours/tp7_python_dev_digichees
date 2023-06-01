@@ -51,7 +51,6 @@ class Order(db.Entity):
 class Conditioning(db.Entity):
     _table_ = "t_conditioning"
     tag = Required(str)
-    weight = Required("WeightTag")
     weightTag = Required("WeightTag")
     price = Required(float)
     order = Set(Order)
@@ -106,7 +105,6 @@ class Shop(db.Entity):
     
 class Weight(db.Entity):
     _table_ = "t_weight"
-    values = Required(float)
     w_val = Required(float)
     object = Set(Object)
 
