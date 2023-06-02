@@ -6,6 +6,7 @@ import json
 # Client used to test the differents fonctionalities of the app.
 clientTest = TestClient(app)
 
+save_token = ""
 
 # Test to see if a registration with unique email return a status 200.
 def test_register():
@@ -19,7 +20,7 @@ def test_register():
 
 
 # Test to see if same registration with same email still return a status 401.
-def test_register_KO_used_email_v2():
+def test_register_KO_used_email():
     response = clientTest.post("/authentification/register", json={
         "email": "mikael.ledevehat@gmail.com",
         "password": "truc",
@@ -34,6 +35,15 @@ def test_login_KO_empty_email():
     response = clientTest.post("/authentification/login", json={
         "email": "",
         "password": "truc"
+    })
+    assert response.status_code == 401
+
+
+# Test to see if a empty password return a status 401.
+def test_login_KO_empty_password():
+    response = clientTest.post("/authentification/login", json={
+        "email": "mikael.ledevehat@gmail.com",
+        "password": ""
     })
     assert response.status_code == 401
 
@@ -74,8 +84,9 @@ def test_login():
     })
 
     assert response.status_code == 200
-    #jsonResponse = json.loads(response.text)
-    #assert jsonResponse["token"] == "1d-Dqb0V3328LU2YYjoT8w"
+    jsonResponse = json.loads(response.text)
+    global save_token
+    save_token = jsonResponse["token"]
 
 
 # Test to see if a logout with a bad token return a status 401.
@@ -89,8 +100,9 @@ def test_logout_KO_bad_token():
 
 # Test to see if a logout with a good token return status 200.
 def test_logout():
+    global save_token
     response = clientTest.post("/authentification/logout", json={
-        "token": "1d-Dqb0V3328LU2YYjoT8w"
+        "token": save_token
     })
 
     assert response.status_code == 200
@@ -98,8 +110,9 @@ def test_logout():
 
 # Test to see if a logout with a good token while not connected first return a status 401.
 def test_logout_KO_unconnected():
+    global save_token
     response = clientTest.post("/authentification/logout", json={
-        "token": "1d-Dqb0V3328LU2YYjoT8w"
+        "token": save_token
     })
 
     assert response.status_code == 401
@@ -118,7 +131,7 @@ def test_unregister_KO_bad_token():
 def test_unregister_KO_unconnected():
     # First login to recieve the token generated with the registration
     response = clientTest.post("/authentification/login", json={
-        "email": "mikael6.ledevehat@gmail.com",
+        "email": "mikael.ledevehat@gmail.com",
         "password": "truc"
     })
 
@@ -146,7 +159,7 @@ def test_unregister_KO_unconnected():
 def test_unregister():
     # First login to recieve the token generated with the registration
     response = clientTest.post("/authentification/login", json={
-        "email": "mikael6.ledevehat@gmail.com",
+        "email": "mikael.ledevehat@gmail.com",
         "password": "truc"
     })
 

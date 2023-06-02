@@ -105,17 +105,12 @@ async def logout(item: TokenItem):
 
 @router.post("/login")
 async def login(item: ConnectionItem) -> dict[str, str]:
-    print("george")
     verity_all_field(item)
-
 
     try:
         user = await get_user_by_email(item.email)
-        print(user)
+
         h = get_password_hash(item.password, user[3].encode("utf-8"))
-        print(item.password)
-        print(h)
-        print(user[2].encode("utf-8"))
         if not h == user[2].encode("utf-8"):
             raise HTTPException(status_code=401, detail="Incorrect email or password")
 
