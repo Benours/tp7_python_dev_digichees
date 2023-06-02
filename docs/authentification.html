@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module authentification</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">authentification</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmikae%5Conedrive%5Cbureau%5Ctp7_python_dev_digichees%5Csrc%5Cauthentification.py">c:\users\mikae\onedrive\bureau\tp7_python_dev_digichees\src\authentification.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="bcrypt.html">bcrypt</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>(<a href="pydantic.utils.html#Representation">pydantic.utils.Representation</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="authentification.html#ConnectionItem">ConnectionItem</a>
+</dt><dt class="heading-text"><a href="authentification.html#RegisterItem">RegisterItem</a>
+</dt><dt class="heading-text"><a href="authentification.html#TokenItem">TokenItem</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ConnectionItem">class <strong>ConnectionItem</strong></a>(<a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ConnectionItem">ConnectionItem</a>(*,&nbsp;email:&nbsp;str,&nbsp;password:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+#&nbsp;Class&nbsp;representing&nbsp;a&nbsp;connection&nbsp;formular&nbsp;recieved&nbsp;from&nbsp;the&nbsp;client.&nbsp;It&nbsp;contain&nbsp;an&nbsp;email,&nbsp;and&nbsp;a&nbsp;password.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="authentification.html#ConnectionItem">ConnectionItem</a></dd>
+<dd><a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a></dd>
+<dd><a href="pydantic.utils.html#Representation">pydantic.utils.Representation</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="ConnectionItem-__json_encoder__"><strong>__json_encoder__</strong></a> = pydantic_encoder(obj: Any) -&gt; Any</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<dl><dt><strong>__annotations__</strong> = {'email': &lt;class 'str'&gt;, 'password': &lt;class 'str'&gt;}</dl>
+
+<dl><dt><strong>__class_vars__</strong> = set()</dl>
+
+<dl><dt><strong>__config__</strong> = &lt;class 'authentification.Config'&gt;</dl>
+
+<dl><dt><strong>__custom_root_type__</strong> = False</dl>
+
+<dl><dt><strong>__exclude_fields__</strong> = None</dl>
+
+<dl><dt><strong>__fields__</strong> = {'email': ModelField(name='email', type=str, required=True), 'password': ModelField(name='password', type=str, required=True)}</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__include_fields__</strong> = None</dl>
+
+<dl><dt><strong>__post_root_validators__</strong> = []</dl>
+
+<dl><dt><strong>__pre_root_validators__</strong> = []</dl>
+
+<dl><dt><strong>__private_attributes__</strong> = {}</dl>
+
+<dl><dt><strong>__schema_cache__</strong> = {}</dl>
+
+<dl><dt><strong>__signature__</strong> = &lt;Signature (*, email: str, password: str) -&gt; None&gt;</dl>
+
+<dl><dt><strong>__validators__</strong> = {}</dl>
+
+<hr>
+Methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ConnectionItem-__eq__"><strong>__eq__</strong></a>(self, other: Any) -&gt; bool</dt></dl>
+
+<dl><dt><a name="ConnectionItem-__getstate__"><strong>__getstate__</strong></a>(self) -&gt; 'DictAny'</dt></dl>
+
+<dl><dt><a name="ConnectionItem-__init__"><strong>__init__</strong></a>(__pydantic_self__, **data: Any) -&gt; None</dt><dd><span class="code">Create&nbsp;a&nbsp;new&nbsp;model&nbsp;by&nbsp;parsing&nbsp;and&nbsp;validating&nbsp;input&nbsp;data&nbsp;from&nbsp;keyword&nbsp;arguments.<br>
+&nbsp;<br>
+Raises&nbsp;ValidationError&nbsp;if&nbsp;the&nbsp;input&nbsp;data&nbsp;cannot&nbsp;be&nbsp;parsed&nbsp;to&nbsp;form&nbsp;a&nbsp;valid&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-__iter__"><strong>__iter__</strong></a>(self) -&gt; 'TupleGenerator'</dt><dd><span class="code">so&nbsp;`<a href="#ConnectionItem-dict">dict</a>(model)`&nbsp;works</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-__repr_args__"><strong>__repr_args__</strong></a>(self) -&gt; 'ReprArgs'</dt></dl>
+
+<dl><dt><a name="ConnectionItem-__setattr__"><strong>__setattr__</strong></a>(self, name, value)</dt></dl>
+
+<dl><dt><a name="ConnectionItem-__setstate__"><strong>__setstate__</strong></a>(self, state: 'DictAny') -&gt; None</dt></dl>
+
+<dl><dt><a name="ConnectionItem-copy"><strong>copy</strong></a>(self: 'Model', *, include: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, exclude: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, update: Optional[ForwardRef('DictStrAny')] = None, deep: bool = False) -&gt; 'Model'</dt><dd><span class="code">Duplicate&nbsp;a&nbsp;model,&nbsp;optionally&nbsp;choose&nbsp;which&nbsp;fields&nbsp;to&nbsp;include,&nbsp;exclude&nbsp;and&nbsp;change.<br>
+&nbsp;<br>
+:param&nbsp;include:&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;new&nbsp;model<br>
+:param&nbsp;exclude:&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;new&nbsp;model,&nbsp;as&nbsp;with&nbsp;values&nbsp;this&nbsp;takes&nbsp;precedence&nbsp;over&nbsp;include<br>
+:param&nbsp;update:&nbsp;values&nbsp;to&nbsp;change/add&nbsp;in&nbsp;the&nbsp;new&nbsp;model.&nbsp;Note:&nbsp;the&nbsp;data&nbsp;is&nbsp;not&nbsp;validated&nbsp;before&nbsp;creating<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;new&nbsp;model:&nbsp;you&nbsp;should&nbsp;trust&nbsp;this&nbsp;data<br>
+:param&nbsp;deep:&nbsp;set&nbsp;to&nbsp;`True`&nbsp;to&nbsp;make&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model<br>
+:return:&nbsp;new&nbsp;model&nbsp;instance</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-dict"><strong>dict</strong></a>(self, *, include: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, exclude: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, by_alias: bool = False, skip_defaults: Optional[bool] = None, exclude_unset: bool = False, exclude_defaults: bool = False, exclude_none: bool = False) -&gt; 'DictStrAny'</dt><dd><span class="code">Generate&nbsp;a&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;optionally&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;or&nbsp;exclude.</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-json"><strong>json</strong></a>(self, *, include: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, exclude: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, by_alias: bool = False, skip_defaults: Optional[bool] = None, exclude_unset: bool = False, exclude_defaults: bool = False, exclude_none: bool = False, encoder: Optional[Callable[[Any], Any]] = None, models_as_dict: bool = True, **dumps_kwargs: Any) -&gt; 'unicode'</dt><dd><span class="code">Generate&nbsp;a&nbsp;JSON&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;`include`&nbsp;and&nbsp;`exclude`&nbsp;arguments&nbsp;as&nbsp;per&nbsp;`<a href="#ConnectionItem-dict">dict</a>()`.<br>
+&nbsp;<br>
+`encoder`&nbsp;is&nbsp;an&nbsp;optional&nbsp;function&nbsp;to&nbsp;supply&nbsp;as&nbsp;`default`&nbsp;to&nbsp;json.dumps(),&nbsp;other&nbsp;arguments&nbsp;as&nbsp;per&nbsp;`json.dumps()`.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ConnectionItem-__get_validators__"><strong>__get_validators__</strong></a>() -&gt; 'CallableGenerator'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="ConnectionItem-__try_update_forward_refs__"><strong>__try_update_forward_refs__</strong></a>(**localns: Any) -&gt; None<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt><dd><span class="code">Same&nbsp;as&nbsp;update_forward_refs&nbsp;but&nbsp;will&nbsp;not&nbsp;raise&nbsp;exception<br>
+when&nbsp;forward&nbsp;references&nbsp;are&nbsp;not&nbsp;defined.</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-construct"><strong>construct</strong></a>(_fields_set: Optional[ForwardRef('SetStr')] = None, **values: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt><dd><span class="code">Creates&nbsp;a&nbsp;new&nbsp;model&nbsp;setting&nbsp;__dict__&nbsp;and&nbsp;__fields_set__&nbsp;from&nbsp;trusted&nbsp;or&nbsp;pre-validated&nbsp;data.<br>
+Default&nbsp;values&nbsp;are&nbsp;respected,&nbsp;but&nbsp;no&nbsp;other&nbsp;validation&nbsp;is&nbsp;performed.<br>
+Behaves&nbsp;as&nbsp;if&nbsp;`Config.extra&nbsp;=&nbsp;'allow'`&nbsp;was&nbsp;set&nbsp;since&nbsp;it&nbsp;adds&nbsp;all&nbsp;passed&nbsp;values</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-from_orm"><strong>from_orm</strong></a>(obj: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="ConnectionItem-parse_file"><strong>parse_file</strong></a>(path: Union[str, pathlib.Path], *, content_type: 'unicode' = None, encoding: 'unicode' = 'utf8', proto: pydantic.parse.Protocol = None, allow_pickle: bool = False) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="ConnectionItem-parse_obj"><strong>parse_obj</strong></a>(obj: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="ConnectionItem-parse_raw"><strong>parse_raw</strong></a>(b: Union[str, bytes], *, content_type: 'unicode' = None, encoding: 'unicode' = 'utf8', proto: pydantic.parse.Protocol = None, allow_pickle: bool = False) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="ConnectionItem-schema"><strong>schema</strong></a>(by_alias: bool = True, ref_template: 'unicode' = '#/definitions/{model}') -&gt; 'DictStrAny'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="ConnectionItem-schema_json"><strong>schema_json</strong></a>(*, by_alias: bool = True, ref_template: 'unicode' = '#/definitions/{model}', **dumps_kwargs: Any) -&gt; 'unicode'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="ConnectionItem-update_forward_refs"><strong>update_forward_refs</strong></a>(**localns: Any) -&gt; None<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt><dd><span class="code">Try&nbsp;to&nbsp;update&nbsp;ForwardRefs&nbsp;on&nbsp;fields&nbsp;based&nbsp;on&nbsp;this&nbsp;Model,&nbsp;globalns&nbsp;and&nbsp;localns.</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-validate"><strong>validate</strong></a>(value: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__fields_set__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>Config</strong> = &lt;class 'pydantic.config.BaseConfig'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="pydantic.utils.html#Representation">pydantic.utils.Representation</a>:<br>
+<dl><dt><a name="ConnectionItem-__pretty__"><strong>__pretty__</strong></a>(self, fmt: Callable[[Any], Any], **kwargs: Any) -&gt; Generator[Any, NoneType, NoneType]</dt><dd><span class="code">Used&nbsp;by&nbsp;devtools&nbsp;(<a href="https://python-devtools.helpmanual.io/">https://python-devtools.helpmanual.io/</a>)&nbsp;to&nbsp;provide&nbsp;a&nbsp;human&nbsp;readable&nbsp;representations&nbsp;of&nbsp;objects</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-__repr__"><strong>__repr__</strong></a>(self) -&gt; 'unicode'</dt></dl>
+
+<dl><dt><a name="ConnectionItem-__repr_name__"><strong>__repr_name__</strong></a>(self) -&gt; 'unicode'</dt><dd><span class="code">Name&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class,&nbsp;used&nbsp;in&nbsp;__repr__.</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-__repr_str__"><strong>__repr_str__</strong></a>(self, join_str: 'unicode') -&gt; 'unicode'</dt></dl>
+
+<dl><dt><a name="ConnectionItem-__rich_repr__"><strong>__rich_repr__</strong></a>(self) -&gt; 'RichReprResult'</dt><dd><span class="code">Get&nbsp;fields&nbsp;for&nbsp;Rich&nbsp;library</span></dd></dl>
+
+<dl><dt><a name="ConnectionItem-__str__"><strong>__str__</strong></a>(self) -&gt; 'unicode'</dt></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="RegisterItem">class <strong>RegisterItem</strong></a>(<a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#RegisterItem">RegisterItem</a>(*,&nbsp;email:&nbsp;str,&nbsp;password:&nbsp;str,&nbsp;last_name:&nbsp;str,&nbsp;first_name:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+#&nbsp;Class&nbsp;representing&nbsp;a&nbsp;register&nbsp;formular&nbsp;recieved&nbsp;from&nbsp;the&nbsp;client.&nbsp;It&nbsp;contain&nbsp;an&nbsp;email,&nbsp;a&nbsp;password,&nbsp;a&nbsp;lastname,<br>
+#&nbsp;and&nbsp;a&nbsp;firstname.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="authentification.html#RegisterItem">RegisterItem</a></dd>
+<dd><a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a></dd>
+<dd><a href="pydantic.utils.html#Representation">pydantic.utils.Representation</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="RegisterItem-__json_encoder__"><strong>__json_encoder__</strong></a> = pydantic_encoder(obj: Any) -&gt; Any</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<dl><dt><strong>__annotations__</strong> = {'email': &lt;class 'str'&gt;, 'first_name': &lt;class 'str'&gt;, 'last_name': &lt;class 'str'&gt;, 'password': &lt;class 'str'&gt;}</dl>
+
+<dl><dt><strong>__class_vars__</strong> = set()</dl>
+
+<dl><dt><strong>__config__</strong> = &lt;class 'authentification.Config'&gt;</dl>
+
+<dl><dt><strong>__custom_root_type__</strong> = False</dl>
+
+<dl><dt><strong>__exclude_fields__</strong> = None</dl>
+
+<dl><dt><strong>__fields__</strong> = {'email': ModelField(name='email', type=str, required=True), 'first_name': ModelField(name='first_name', type=str, required=True), 'last_name': ModelField(name='last_name', type=str, required=True), 'password': ModelField(name='password', type=str, required=True)}</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__include_fields__</strong> = None</dl>
+
+<dl><dt><strong>__post_root_validators__</strong> = []</dl>
+
+<dl><dt><strong>__pre_root_validators__</strong> = []</dl>
+
+<dl><dt><strong>__private_attributes__</strong> = {}</dl>
+
+<dl><dt><strong>__schema_cache__</strong> = {}</dl>
+
+<dl><dt><strong>__signature__</strong> = &lt;Signature (*, email: str, password: str, last_name: str, first_name: str) -&gt; None&gt;</dl>
+
+<dl><dt><strong>__validators__</strong> = {}</dl>
+
+<hr>
+Methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="RegisterItem-__eq__"><strong>__eq__</strong></a>(self, other: Any) -&gt; bool</dt></dl>
+
+<dl><dt><a name="RegisterItem-__getstate__"><strong>__getstate__</strong></a>(self) -&gt; 'DictAny'</dt></dl>
+
+<dl><dt><a name="RegisterItem-__init__"><strong>__init__</strong></a>(__pydantic_self__, **data: Any) -&gt; None</dt><dd><span class="code">Create&nbsp;a&nbsp;new&nbsp;model&nbsp;by&nbsp;parsing&nbsp;and&nbsp;validating&nbsp;input&nbsp;data&nbsp;from&nbsp;keyword&nbsp;arguments.<br>
+&nbsp;<br>
+Raises&nbsp;ValidationError&nbsp;if&nbsp;the&nbsp;input&nbsp;data&nbsp;cannot&nbsp;be&nbsp;parsed&nbsp;to&nbsp;form&nbsp;a&nbsp;valid&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-__iter__"><strong>__iter__</strong></a>(self) -&gt; 'TupleGenerator'</dt><dd><span class="code">so&nbsp;`<a href="#RegisterItem-dict">dict</a>(model)`&nbsp;works</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-__repr_args__"><strong>__repr_args__</strong></a>(self) -&gt; 'ReprArgs'</dt></dl>
+
+<dl><dt><a name="RegisterItem-__setattr__"><strong>__setattr__</strong></a>(self, name, value)</dt></dl>
+
+<dl><dt><a name="RegisterItem-__setstate__"><strong>__setstate__</strong></a>(self, state: 'DictAny') -&gt; None</dt></dl>
+
+<dl><dt><a name="RegisterItem-copy"><strong>copy</strong></a>(self: 'Model', *, include: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, exclude: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, update: Optional[ForwardRef('DictStrAny')] = None, deep: bool = False) -&gt; 'Model'</dt><dd><span class="code">Duplicate&nbsp;a&nbsp;model,&nbsp;optionally&nbsp;choose&nbsp;which&nbsp;fields&nbsp;to&nbsp;include,&nbsp;exclude&nbsp;and&nbsp;change.<br>
+&nbsp;<br>
+:param&nbsp;include:&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;new&nbsp;model<br>
+:param&nbsp;exclude:&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;new&nbsp;model,&nbsp;as&nbsp;with&nbsp;values&nbsp;this&nbsp;takes&nbsp;precedence&nbsp;over&nbsp;include<br>
+:param&nbsp;update:&nbsp;values&nbsp;to&nbsp;change/add&nbsp;in&nbsp;the&nbsp;new&nbsp;model.&nbsp;Note:&nbsp;the&nbsp;data&nbsp;is&nbsp;not&nbsp;validated&nbsp;before&nbsp;creating<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;new&nbsp;model:&nbsp;you&nbsp;should&nbsp;trust&nbsp;this&nbsp;data<br>
+:param&nbsp;deep:&nbsp;set&nbsp;to&nbsp;`True`&nbsp;to&nbsp;make&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model<br>
+:return:&nbsp;new&nbsp;model&nbsp;instance</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-dict"><strong>dict</strong></a>(self, *, include: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, exclude: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, by_alias: bool = False, skip_defaults: Optional[bool] = None, exclude_unset: bool = False, exclude_defaults: bool = False, exclude_none: bool = False) -&gt; 'DictStrAny'</dt><dd><span class="code">Generate&nbsp;a&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;optionally&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;or&nbsp;exclude.</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-json"><strong>json</strong></a>(self, *, include: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, exclude: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, by_alias: bool = False, skip_defaults: Optional[bool] = None, exclude_unset: bool = False, exclude_defaults: bool = False, exclude_none: bool = False, encoder: Optional[Callable[[Any], Any]] = None, models_as_dict: bool = True, **dumps_kwargs: Any) -&gt; 'unicode'</dt><dd><span class="code">Generate&nbsp;a&nbsp;JSON&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;`include`&nbsp;and&nbsp;`exclude`&nbsp;arguments&nbsp;as&nbsp;per&nbsp;`<a href="#RegisterItem-dict">dict</a>()`.<br>
+&nbsp;<br>
+`encoder`&nbsp;is&nbsp;an&nbsp;optional&nbsp;function&nbsp;to&nbsp;supply&nbsp;as&nbsp;`default`&nbsp;to&nbsp;json.dumps(),&nbsp;other&nbsp;arguments&nbsp;as&nbsp;per&nbsp;`json.dumps()`.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="RegisterItem-__get_validators__"><strong>__get_validators__</strong></a>() -&gt; 'CallableGenerator'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="RegisterItem-__try_update_forward_refs__"><strong>__try_update_forward_refs__</strong></a>(**localns: Any) -&gt; None<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt><dd><span class="code">Same&nbsp;as&nbsp;update_forward_refs&nbsp;but&nbsp;will&nbsp;not&nbsp;raise&nbsp;exception<br>
+when&nbsp;forward&nbsp;references&nbsp;are&nbsp;not&nbsp;defined.</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-construct"><strong>construct</strong></a>(_fields_set: Optional[ForwardRef('SetStr')] = None, **values: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt><dd><span class="code">Creates&nbsp;a&nbsp;new&nbsp;model&nbsp;setting&nbsp;__dict__&nbsp;and&nbsp;__fields_set__&nbsp;from&nbsp;trusted&nbsp;or&nbsp;pre-validated&nbsp;data.<br>
+Default&nbsp;values&nbsp;are&nbsp;respected,&nbsp;but&nbsp;no&nbsp;other&nbsp;validation&nbsp;is&nbsp;performed.<br>
+Behaves&nbsp;as&nbsp;if&nbsp;`Config.extra&nbsp;=&nbsp;'allow'`&nbsp;was&nbsp;set&nbsp;since&nbsp;it&nbsp;adds&nbsp;all&nbsp;passed&nbsp;values</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-from_orm"><strong>from_orm</strong></a>(obj: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="RegisterItem-parse_file"><strong>parse_file</strong></a>(path: Union[str, pathlib.Path], *, content_type: 'unicode' = None, encoding: 'unicode' = 'utf8', proto: pydantic.parse.Protocol = None, allow_pickle: bool = False) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="RegisterItem-parse_obj"><strong>parse_obj</strong></a>(obj: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="RegisterItem-parse_raw"><strong>parse_raw</strong></a>(b: Union[str, bytes], *, content_type: 'unicode' = None, encoding: 'unicode' = 'utf8', proto: pydantic.parse.Protocol = None, allow_pickle: bool = False) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="RegisterItem-schema"><strong>schema</strong></a>(by_alias: bool = True, ref_template: 'unicode' = '#/definitions/{model}') -&gt; 'DictStrAny'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="RegisterItem-schema_json"><strong>schema_json</strong></a>(*, by_alias: bool = True, ref_template: 'unicode' = '#/definitions/{model}', **dumps_kwargs: Any) -&gt; 'unicode'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="RegisterItem-update_forward_refs"><strong>update_forward_refs</strong></a>(**localns: Any) -&gt; None<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt><dd><span class="code">Try&nbsp;to&nbsp;update&nbsp;ForwardRefs&nbsp;on&nbsp;fields&nbsp;based&nbsp;on&nbsp;this&nbsp;Model,&nbsp;globalns&nbsp;and&nbsp;localns.</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-validate"><strong>validate</strong></a>(value: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__fields_set__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>Config</strong> = &lt;class 'pydantic.config.BaseConfig'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="pydantic.utils.html#Representation">pydantic.utils.Representation</a>:<br>
+<dl><dt><a name="RegisterItem-__pretty__"><strong>__pretty__</strong></a>(self, fmt: Callable[[Any], Any], **kwargs: Any) -&gt; Generator[Any, NoneType, NoneType]</dt><dd><span class="code">Used&nbsp;by&nbsp;devtools&nbsp;(<a href="https://python-devtools.helpmanual.io/">https://python-devtools.helpmanual.io/</a>)&nbsp;to&nbsp;provide&nbsp;a&nbsp;human&nbsp;readable&nbsp;representations&nbsp;of&nbsp;objects</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-__repr__"><strong>__repr__</strong></a>(self) -&gt; 'unicode'</dt></dl>
+
+<dl><dt><a name="RegisterItem-__repr_name__"><strong>__repr_name__</strong></a>(self) -&gt; 'unicode'</dt><dd><span class="code">Name&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class,&nbsp;used&nbsp;in&nbsp;__repr__.</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-__repr_str__"><strong>__repr_str__</strong></a>(self, join_str: 'unicode') -&gt; 'unicode'</dt></dl>
+
+<dl><dt><a name="RegisterItem-__rich_repr__"><strong>__rich_repr__</strong></a>(self) -&gt; 'RichReprResult'</dt><dd><span class="code">Get&nbsp;fields&nbsp;for&nbsp;Rich&nbsp;library</span></dd></dl>
+
+<dl><dt><a name="RegisterItem-__str__"><strong>__str__</strong></a>(self) -&gt; 'unicode'</dt></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="TokenItem">class <strong>TokenItem</strong></a>(<a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#TokenItem">TokenItem</a>(*,&nbsp;token:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+#&nbsp;Class&nbsp;representing&nbsp;an&nbsp;action&nbsp;formular&nbsp;recieved&nbsp;from&nbsp;the&nbsp;client.&nbsp;It&nbsp;contain&nbsp;an&nbsp;token.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="authentification.html#TokenItem">TokenItem</a></dd>
+<dd><a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a></dd>
+<dd><a href="pydantic.utils.html#Representation">pydantic.utils.Representation</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="TokenItem-__json_encoder__"><strong>__json_encoder__</strong></a> = pydantic_encoder(obj: Any) -&gt; Any</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<dl><dt><strong>__annotations__</strong> = {'token': &lt;class 'str'&gt;}</dl>
+
+<dl><dt><strong>__class_vars__</strong> = set()</dl>
+
+<dl><dt><strong>__config__</strong> = &lt;class 'authentification.Config'&gt;</dl>
+
+<dl><dt><strong>__custom_root_type__</strong> = False</dl>
+
+<dl><dt><strong>__exclude_fields__</strong> = None</dl>
+
+<dl><dt><strong>__fields__</strong> = {'token': ModelField(name='token', type=str, required=True)}</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__include_fields__</strong> = None</dl>
+
+<dl><dt><strong>__post_root_validators__</strong> = []</dl>
+
+<dl><dt><strong>__pre_root_validators__</strong> = []</dl>
+
+<dl><dt><strong>__private_attributes__</strong> = {}</dl>
+
+<dl><dt><strong>__schema_cache__</strong> = {}</dl>
+
+<dl><dt><strong>__signature__</strong> = &lt;Signature (*, token: str) -&gt; None&gt;</dl>
+
+<dl><dt><strong>__validators__</strong> = {}</dl>
+
+<hr>
+Methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="TokenItem-__eq__"><strong>__eq__</strong></a>(self, other: Any) -&gt; bool</dt></dl>
+
+<dl><dt><a name="TokenItem-__getstate__"><strong>__getstate__</strong></a>(self) -&gt; 'DictAny'</dt></dl>
+
+<dl><dt><a name="TokenItem-__init__"><strong>__init__</strong></a>(__pydantic_self__, **data: Any) -&gt; None</dt><dd><span class="code">Create&nbsp;a&nbsp;new&nbsp;model&nbsp;by&nbsp;parsing&nbsp;and&nbsp;validating&nbsp;input&nbsp;data&nbsp;from&nbsp;keyword&nbsp;arguments.<br>
+&nbsp;<br>
+Raises&nbsp;ValidationError&nbsp;if&nbsp;the&nbsp;input&nbsp;data&nbsp;cannot&nbsp;be&nbsp;parsed&nbsp;to&nbsp;form&nbsp;a&nbsp;valid&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="TokenItem-__iter__"><strong>__iter__</strong></a>(self) -&gt; 'TupleGenerator'</dt><dd><span class="code">so&nbsp;`<a href="#TokenItem-dict">dict</a>(model)`&nbsp;works</span></dd></dl>
+
+<dl><dt><a name="TokenItem-__repr_args__"><strong>__repr_args__</strong></a>(self) -&gt; 'ReprArgs'</dt></dl>
+
+<dl><dt><a name="TokenItem-__setattr__"><strong>__setattr__</strong></a>(self, name, value)</dt></dl>
+
+<dl><dt><a name="TokenItem-__setstate__"><strong>__setstate__</strong></a>(self, state: 'DictAny') -&gt; None</dt></dl>
+
+<dl><dt><a name="TokenItem-copy"><strong>copy</strong></a>(self: 'Model', *, include: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, exclude: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, update: Optional[ForwardRef('DictStrAny')] = None, deep: bool = False) -&gt; 'Model'</dt><dd><span class="code">Duplicate&nbsp;a&nbsp;model,&nbsp;optionally&nbsp;choose&nbsp;which&nbsp;fields&nbsp;to&nbsp;include,&nbsp;exclude&nbsp;and&nbsp;change.<br>
+&nbsp;<br>
+:param&nbsp;include:&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;new&nbsp;model<br>
+:param&nbsp;exclude:&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;new&nbsp;model,&nbsp;as&nbsp;with&nbsp;values&nbsp;this&nbsp;takes&nbsp;precedence&nbsp;over&nbsp;include<br>
+:param&nbsp;update:&nbsp;values&nbsp;to&nbsp;change/add&nbsp;in&nbsp;the&nbsp;new&nbsp;model.&nbsp;Note:&nbsp;the&nbsp;data&nbsp;is&nbsp;not&nbsp;validated&nbsp;before&nbsp;creating<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;new&nbsp;model:&nbsp;you&nbsp;should&nbsp;trust&nbsp;this&nbsp;data<br>
+:param&nbsp;deep:&nbsp;set&nbsp;to&nbsp;`True`&nbsp;to&nbsp;make&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model<br>
+:return:&nbsp;new&nbsp;model&nbsp;instance</span></dd></dl>
+
+<dl><dt><a name="TokenItem-dict"><strong>dict</strong></a>(self, *, include: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, exclude: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, by_alias: bool = False, skip_defaults: Optional[bool] = None, exclude_unset: bool = False, exclude_defaults: bool = False, exclude_none: bool = False) -&gt; 'DictStrAny'</dt><dd><span class="code">Generate&nbsp;a&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;optionally&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;or&nbsp;exclude.</span></dd></dl>
+
+<dl><dt><a name="TokenItem-json"><strong>json</strong></a>(self, *, include: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, exclude: Union[ForwardRef('AbstractSetIntStr'), ForwardRef('MappingIntStrAny'), NoneType] = None, by_alias: bool = False, skip_defaults: Optional[bool] = None, exclude_unset: bool = False, exclude_defaults: bool = False, exclude_none: bool = False, encoder: Optional[Callable[[Any], Any]] = None, models_as_dict: bool = True, **dumps_kwargs: Any) -&gt; 'unicode'</dt><dd><span class="code">Generate&nbsp;a&nbsp;JSON&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;`include`&nbsp;and&nbsp;`exclude`&nbsp;arguments&nbsp;as&nbsp;per&nbsp;`<a href="#TokenItem-dict">dict</a>()`.<br>
+&nbsp;<br>
+`encoder`&nbsp;is&nbsp;an&nbsp;optional&nbsp;function&nbsp;to&nbsp;supply&nbsp;as&nbsp;`default`&nbsp;to&nbsp;json.dumps(),&nbsp;other&nbsp;arguments&nbsp;as&nbsp;per&nbsp;`json.dumps()`.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="TokenItem-__get_validators__"><strong>__get_validators__</strong></a>() -&gt; 'CallableGenerator'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="TokenItem-__try_update_forward_refs__"><strong>__try_update_forward_refs__</strong></a>(**localns: Any) -&gt; None<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt><dd><span class="code">Same&nbsp;as&nbsp;update_forward_refs&nbsp;but&nbsp;will&nbsp;not&nbsp;raise&nbsp;exception<br>
+when&nbsp;forward&nbsp;references&nbsp;are&nbsp;not&nbsp;defined.</span></dd></dl>
+
+<dl><dt><a name="TokenItem-construct"><strong>construct</strong></a>(_fields_set: Optional[ForwardRef('SetStr')] = None, **values: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt><dd><span class="code">Creates&nbsp;a&nbsp;new&nbsp;model&nbsp;setting&nbsp;__dict__&nbsp;and&nbsp;__fields_set__&nbsp;from&nbsp;trusted&nbsp;or&nbsp;pre-validated&nbsp;data.<br>
+Default&nbsp;values&nbsp;are&nbsp;respected,&nbsp;but&nbsp;no&nbsp;other&nbsp;validation&nbsp;is&nbsp;performed.<br>
+Behaves&nbsp;as&nbsp;if&nbsp;`Config.extra&nbsp;=&nbsp;'allow'`&nbsp;was&nbsp;set&nbsp;since&nbsp;it&nbsp;adds&nbsp;all&nbsp;passed&nbsp;values</span></dd></dl>
+
+<dl><dt><a name="TokenItem-from_orm"><strong>from_orm</strong></a>(obj: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="TokenItem-parse_file"><strong>parse_file</strong></a>(path: Union[str, pathlib.Path], *, content_type: 'unicode' = None, encoding: 'unicode' = 'utf8', proto: pydantic.parse.Protocol = None, allow_pickle: bool = False) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="TokenItem-parse_obj"><strong>parse_obj</strong></a>(obj: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="TokenItem-parse_raw"><strong>parse_raw</strong></a>(b: Union[str, bytes], *, content_type: 'unicode' = None, encoding: 'unicode' = 'utf8', proto: pydantic.parse.Protocol = None, allow_pickle: bool = False) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="TokenItem-schema"><strong>schema</strong></a>(by_alias: bool = True, ref_template: 'unicode' = '#/definitions/{model}') -&gt; 'DictStrAny'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="TokenItem-schema_json"><strong>schema_json</strong></a>(*, by_alias: bool = True, ref_template: 'unicode' = '#/definitions/{model}', **dumps_kwargs: Any) -&gt; 'unicode'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<dl><dt><a name="TokenItem-update_forward_refs"><strong>update_forward_refs</strong></a>(**localns: Any) -&gt; None<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt><dd><span class="code">Try&nbsp;to&nbsp;update&nbsp;ForwardRefs&nbsp;on&nbsp;fields&nbsp;based&nbsp;on&nbsp;this&nbsp;Model,&nbsp;globalns&nbsp;and&nbsp;localns.</span></dd></dl>
+
+<dl><dt><a name="TokenItem-validate"><strong>validate</strong></a>(value: Any) -&gt; 'Model'<span class="grey"><span class="heading-text"> from <a href="pydantic.main.html#ModelMetaclass">pydantic.main.ModelMetaclass</a></span></span></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__fields_set__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>Config</strong> = &lt;class 'pydantic.config.BaseConfig'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="pydantic.utils.html#Representation">pydantic.utils.Representation</a>:<br>
+<dl><dt><a name="TokenItem-__pretty__"><strong>__pretty__</strong></a>(self, fmt: Callable[[Any], Any], **kwargs: Any) -&gt; Generator[Any, NoneType, NoneType]</dt><dd><span class="code">Used&nbsp;by&nbsp;devtools&nbsp;(<a href="https://python-devtools.helpmanual.io/">https://python-devtools.helpmanual.io/</a>)&nbsp;to&nbsp;provide&nbsp;a&nbsp;human&nbsp;readable&nbsp;representations&nbsp;of&nbsp;objects</span></dd></dl>
+
+<dl><dt><a name="TokenItem-__repr__"><strong>__repr__</strong></a>(self) -&gt; 'unicode'</dt></dl>
+
+<dl><dt><a name="TokenItem-__repr_name__"><strong>__repr_name__</strong></a>(self) -&gt; 'unicode'</dt><dd><span class="code">Name&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class,&nbsp;used&nbsp;in&nbsp;__repr__.</span></dd></dl>
+
+<dl><dt><a name="TokenItem-__repr_str__"><strong>__repr_str__</strong></a>(self, join_str: 'unicode') -&gt; 'unicode'</dt></dl>
+
+<dl><dt><a name="TokenItem-__rich_repr__"><strong>__rich_repr__</strong></a>(self) -&gt; 'RichReprResult'</dt><dd><span class="code">Get&nbsp;fields&nbsp;for&nbsp;Rich&nbsp;library</span></dd></dl>
+
+<dl><dt><a name="TokenItem-__str__"><strong>__str__</strong></a>(self) -&gt; 'unicode'</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-get_password_hash"><strong>get_password_hash</strong></a>(password: str, salt: bytes) -&gt; bytes</dt><dd><span class="code">#&nbsp;Return&nbsp;the&nbsp;hash&nbsp;of&nbsp;the&nbsp;given&nbsp;password&nbsp;and&nbsp;the&nbsp;given&nbsp;salt.&nbsp;The&nbsp;salt&nbsp;is&nbsp;encoded&nbsp;in&nbsp;binary&nbsp;if&nbsp;it's&nbsp;a&nbsp;string.&nbsp;The<br>
+#&nbsp;result&nbsp;hash&nbsp;is&nbsp;in&nbsp;binary&nbsp;format.</span></dd></dl>
+ <dl><dt>async <a name="-login"><strong>login</strong></a>(item: authentification.ConnectionItem) -&gt; dict[str, str]</dt></dl>
+ <dl><dt>async <a name="-logout"><strong>logout</strong></a>(item: authentification.TokenItem)</dt><dd><span class="code">#&nbsp;Route&nbsp;(POST)&nbsp;used&nbsp;to&nbsp;logout&nbsp;from&nbsp;the&nbsp;app.&nbsp;A&nbsp;token&nbsp;formular&nbsp;must&nbsp;be&nbsp;given&nbsp;trought&nbsp;POST&nbsp;method.&nbsp;If&nbsp;the&nbsp;token&nbsp;exist,<br>
+#&nbsp;and&nbsp;the&nbsp;user&nbsp;is&nbsp;connected,&nbsp;the&nbsp;user&nbsp;will&nbsp;be&nbsp;deleted&nbsp;from&nbsp;the&nbsp;connected&nbsp;users.&nbsp;Else&nbsp;raise&nbsp;a&nbsp;400&nbsp;exception.</span></dd></dl>
+ <dl><dt>async <a name="-register"><strong>register</strong></a>(item: authentification.RegisterItem)</dt><dd><span class="code">#&nbsp;Route&nbsp;(POST)&nbsp;used&nbsp;to&nbsp;register&nbsp;a&nbsp;new&nbsp;user.&nbsp;A&nbsp;register&nbsp;formular&nbsp;must&nbsp;be&nbsp;given&nbsp;trought&nbsp;POST&nbsp;method.&nbsp;If&nbsp;a&nbsp;user&nbsp;with&nbsp;the<br>
+#&nbsp;chosen&nbsp;email&nbsp;already&nbsp;exist&nbsp;in&nbsp;base,&nbsp;then&nbsp;raise&nbsp;a&nbsp;400&nbsp;exception.&nbsp;Else&nbsp;the&nbsp;new&nbsp;user&nbsp;is&nbsp;added&nbsp;into&nbsp;the&nbsp;base.</span></dd></dl>
+ <dl><dt>async <a name="-unregister"><strong>unregister</strong></a>(item: authentification.TokenItem)</dt><dd><span class="code">#&nbsp;Route&nbsp;(POST)&nbsp;used&nbsp;to&nbsp;unregister&nbsp;a&nbsp;new&nbsp;user.&nbsp;A&nbsp;token&nbsp;formular&nbsp;must&nbsp;be&nbsp;given&nbsp;trought&nbsp;POST&nbsp;method.&nbsp;If&nbsp;the&nbsp;token&nbsp;exist,<br>
+#&nbsp;and&nbsp;the&nbsp;user&nbsp;is&nbsp;connected,&nbsp;the&nbsp;user&nbsp;will&nbsp;be&nbsp;deleted&nbsp;from&nbsp;the&nbsp;base&nbsp;and&nbsp;from&nbsp;the&nbsp;connected&nbsp;users.&nbsp;Else&nbsp;raise&nbsp;a&nbsp;400<br>
+#&nbsp;exception.</span></dd></dl>
+ <dl><dt><a name="-verity_all_field"><strong>verity_all_field</strong></a>(item: pydantic.main.BaseModel)</dt></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>router</strong> = &lt;fastapi.routing.APIRouter object&gt;<br>
+<strong>user_connected</strong> = []</td></tr></table>
+</body></html>

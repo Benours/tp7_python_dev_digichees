@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module CRUD_object</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">CRUD_object</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmikae%5Conedrive%5Cbureau%5Ctp7_python_dev_digichees%5Csrc%5Ccrud_object.py">c:\users\mikae\onedrive\bureau\tp7_python_dev_digichees\src\crud_object.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>async <a name="-add_object"><strong>add_object</strong></a>(name: str, height: int, w_val: float, description: str, price: int, stockline: int, shop: int, conditioning: int) -&gt; dict</dt><dd><span class="code">#&nbsp;Add&nbsp;object&nbsp;with&nbsp;name,&nbsp;height,&nbsp;w_val&nbsp;(weight),&nbsp;description,&nbsp;price,&nbsp;stockline,&nbsp;shop&nbsp;and&nbsp;conditioning<br>
+#&nbsp;Add&nbsp;object</span></dd></dl>
+ <dl><dt>async <a name="-delete_object"><strong>delete_object</strong></a>(id: int) -&gt; dict</dt><dd><span class="code">#&nbsp;Delete&nbsp;object</span></dd></dl>
+ <dl><dt>async <a name="-get_all_objects"><strong>get_all_objects</strong></a>() -&gt; list</dt><dd><span class="code">#&nbsp;Get&nbsp;all&nbsp;object</span></dd></dl>
+ <dl><dt>async <a name="-get_object_by_id"><strong>get_object_by_id</strong></a>(id: int) -&gt; list</dt><dd><span class="code">#&nbsp;Get&nbsp;object&nbsp;with&nbsp;id</span></dd></dl>
+ <dl><dt>async <a name="-update_object"><strong>update_object</strong></a>(id: int, name: str, height: int, w_val: int, description: str, price: int, stockline: int, shop: int, conditioning: int) -&gt; dict</dt><dd><span class="code">#&nbsp;Update&nbsp;object&nbsp;with&nbsp;name,&nbsp;height,&nbsp;w_val&nbsp;(weight),&nbsp;description,&nbsp;price,&nbsp;stockline,&nbsp;shop&nbsp;and&nbsp;conditioning&nbsp;and&nbsp;id&nbsp;to&nbsp;access<br>
+#&nbsp;Update&nbsp;object</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>conn</strong> = &lt;mysql.connector.connection_cext.CMySQLConnection object&gt;<br>
+<strong>router</strong> = &lt;fastapi.routing.APIRouter object&gt;</td></tr></table>
+</body></html>
