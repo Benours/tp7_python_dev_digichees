@@ -39,7 +39,7 @@ async def get_user_by_email(email: str):
         raise HTTPException(status_code=404, detail="User not found")
 
 
-# Add user with email, password and optional firstname and lastname
+# Add user
 @router.post("/add")
 async def add_user(email: str, password: str, salt: str, firstname: str = "", lastname: str = ""):
     cursor = conn.cursor()
@@ -47,16 +47,6 @@ async def add_user(email: str, password: str, salt: str, firstname: str = "", la
     cursor.execute(
         "INSERT INTO t_user (email, password, salt, firstname, lastname, token) VALUES (%s, %s, %s, %s, %s, %s)",
         (email, password, salt, firstname, lastname, token)
-    )
-
-# Add user
-@router.post("/add")
-async def add_user(email: str, password: str, firstname: str = "", lastname: str = ""):
-    cursor = conn.cursor()
-    token = secrets.token_urlsafe(16)
-    cursor.execute(
-        "INSERT INTO t_user (email, password, firstname, lastname, token) VALUES (%s, %s, %s, %s, %s)",
-        (email, password, firstname, lastname, token)
     )
     conn.commit()
     cursor.close()

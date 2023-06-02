@@ -5,7 +5,7 @@ from src.CRUD_weight import router as weight_router
 from src.CRUD_weight_tag import app as weight_tag_router
 from src.CRUD_city import app as city_router
 from src.CRUD_conditioning import app as conditioning_router
-from src.authtentification import router as authentification_router
+from src.authentification import router as authentification_router
 from src.Impress import app as impress_router
 
 import uvicorn
