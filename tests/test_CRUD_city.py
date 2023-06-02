@@ -2,13 +2,15 @@ import unittest
 from src.CRUD_city import *
 
 
-# La class permet de regrouper les tes à effectué
-class test_City_Crud(unittest.TestCase):
+# La class permet de regrouper les tests à effectué
+class TestCityCrud(unittest.TestCase):
     # Mais ne pas lancé le test testCityCrud parce que
     # le lancement ce fait dans le désordre et ne créer pas
     # la ville avant de le supprimer ou le modifier.
     # Donc, il faut le lancer dans l'ordre la création d'abord
     # la suppression à la fin
+
+    # test de la création de ville
     def test_Create(self):
         # la fonction createCity retourne "successful creation"
         # si la method fonctionne correctement pour qu'on le voit sur swagger
@@ -19,6 +21,7 @@ class test_City_Crud(unittest.TestCase):
         res = create_city(self.zipCode, self.name, self.department)
         self.assertEquals(res, "Successful Creation")
 
+    # test pour avoir toutes les villes
     def test_Get(self):
         # si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
         # Montcuq
@@ -27,6 +30,7 @@ class test_City_Crud(unittest.TestCase):
         print(self.id)
         self.assertEquals(res[len(res) - 1], (self.id, '46042', 'Cahors', 'Lot'))
 
+    # test pour avoir la ville associé à l'id inscrit
     def test_Get_By_Id(self):
         # si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
         # par id.
@@ -35,6 +39,7 @@ class test_City_Crud(unittest.TestCase):
         res2 = get_city_by_id(self.id)
         self.assertEquals(res2, [(self.id, '46042', 'Cahors', 'Lot')])
 
+    # test pour modifier les informations associé à l'id
     def test_Update(self):
         # donc parce que on a besoin de l'id du dernier emplacement
         # on récupère l'id de getcity pour l'update
@@ -46,6 +51,7 @@ class test_City_Crud(unittest.TestCase):
         res = res2[len(res2) - 1]
         self.assertEquals(res, (self.id, '46042', 'Cahors', 'Lot'))
 
+    #test de suppression de l'id avec son contenu
     def test_Delete(self):
         # tout comme l'update, on a besoin de l'id du dernier emplacement pour supprimer
         # la ville teste

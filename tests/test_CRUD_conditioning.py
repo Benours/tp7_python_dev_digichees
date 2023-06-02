@@ -3,13 +3,15 @@ from src.CRUD_conditioning import *
 from src.CRUD_weight_tag import *
 
 
-# La class permet de regrouper les tes à effectué
-class test_Conditioning_Crud(unittest.TestCase):
+# La class permet de regrouper les tests à effectué
+class TestConditioningCrud(unittest.TestCase):
     # Mais ne pas lancé le test testConditioningCrud parce que
     # le lancement ce fait dans le désordre et ne créer pas
     # le conditionnement avant de le supprimer ou le modifier.
     # Donc, il faut le lancer dans l'ordre la création d'abord
     # la suppression à la fin
+
+    # test de la création de l'objet conditionné
     def test_Create(self):
         # la fonction createConditioning retourne "successful creation"
         # si la method fonctionne correctement pour qu'on le voit sur swagger
@@ -20,6 +22,7 @@ class test_Conditioning_Crud(unittest.TestCase):
         res = create_conditioning(self.tag, self.weight, self.price)
         self.assertEquals(res, "Successful Creation")
 
+    # test pour avoir toutes les objets conditionnés
     def test_Get(self):
         # si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
         # Herta
@@ -31,6 +34,7 @@ class test_Conditioning_Crud(unittest.TestCase):
         print(self.id2)
         self.assertEquals(res[len(res) - 1], (self.id, "herta", self.id2, 5.0))
 
+    # test pour avoir l'objets conditionné associé à l'id inscrit
     def test_Get_By_Id(self):
         # si l'ordre est respecté par incrémentation nous devons retrouver à la dernière place
         # par id.
@@ -42,6 +46,7 @@ class test_Conditioning_Crud(unittest.TestCase):
         res3 = get_conditioning_by_id(self.id)
         self.assertEquals(res3, [(self.id, "herta", self.id2, 5.0)])
 
+    # test pour modifier les informations associé à l'id
     def test_Update(self):
         # donc parce que on a besoin de l'id du dernier emplacement
         # on récupère l'id de getConditioning pour l'update
@@ -57,6 +62,7 @@ class test_Conditioning_Crud(unittest.TestCase):
         # print(self.id)
         self.assertEquals(res, (self.id, "jambon", self.id2, 1.0))
 
+    # test de suppression de l'id avec son contenu
     def test_Delete(self):
         # tout comme l'update, on a besoin de l'id du dernier emplacement pour supprimer
         # le tag test

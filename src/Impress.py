@@ -11,7 +11,11 @@ from fastapi import APIRouter
 
 app = APIRouter()
 
+#pour impress, il faut que les données soit dans un fichier txt pour l'imprimer.
+#pour différencier les fichier et ainsi avoir un historique, la date du jour est necessaire
+#pour l'inserer dans le nom du fichier
 
+#Impress_all permet de créer un fichier qui acceuille tout les get de chaque classe
 @app.get("/impress_all")
 async def impress_all(date: str):
     city = get_city()
@@ -28,6 +32,7 @@ async def impress_all(date: str):
     file.close()
     return "Successful Impression"
 
+#Impress_user permet de créer un fichier qui acceuille uniquement le get de user
 @app.get("/impress_user")
 async def impress_user(date: str):
     user = await get_all_users()
@@ -39,6 +44,7 @@ async def impress_user(date: str):
     file.close()
     return "Successful Impression"
 
+#Impress_city permet de créer un fichier qui acceuille uniquement le get de city
 @app.get("/impress_city")
 def impress_city(date: str):
     city = get_city()
@@ -50,6 +56,7 @@ def impress_city(date: str):
     file.close()
     return "Successful Impression"
 
+#Impress_conditioning permet de créer un fichier qui acceuille uniquement le get de conditioning
 @app.get("/impress_conditioning")
 def impress_conditioning(date: str):
     conditioning = get_conditioning()
@@ -61,6 +68,7 @@ def impress_conditioning(date: str):
     file.close()
     return "Successful Impression"
 
+#Impress_weight_tag permet de créer un fichier qui acceuille uniquement le get de weight_tag
 @app.get("/impress_weight_tag")
 def impress_weight_tag(date: str):
     weighttag = get_weight_tag()
@@ -72,6 +80,7 @@ def impress_weight_tag(date: str):
     file.close()
     return "Successful Impression"
 
+#Impress_weights permet de créer un fichier qui acceuille uniquement le get de weights
 @app.get("/impress_weights")
 async def impress_weights(date: str):
     weight = await get_all_weights()
@@ -83,6 +92,7 @@ async def impress_weights(date: str):
     file.close()
     return "Successful Impression"
 
+#Impress_objects permet de créer un fichier qui acceuille uniquement le get de objects
 @app.get("/impress_objects")
 async def impress_objects(date: str):
     objects = await get_all_objects()
