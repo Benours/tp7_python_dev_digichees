@@ -7,7 +7,7 @@ router = APIRouter()
 
 # Get all users
 @router.get("/all")
-async def get_all_users():
+async def get_all_users() -> list:
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_user")
     users = cursor.fetchall()
@@ -17,7 +17,7 @@ async def get_all_users():
 
 # Get user with id
 @router.get("/get/{id}")
-async def get_user_by_id(id: int):
+async def get_user_by_id(id: int) -> list:
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_user WHERE id = %s", (id,))
     user = cursor.fetchone()
@@ -28,7 +28,7 @@ async def get_user_by_id(id: int):
         raise HTTPException(status_code=404, detail="User not found")
 
 @router.get("/get/{email}")
-async def get_user_by_email(email: str):
+async def get_user_by_email(email: str) -> list:
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_user WHERE email = %s", (email,))
     user = cursor.fetchone()
@@ -41,7 +41,7 @@ async def get_user_by_email(email: str):
 
 # Add user
 @router.post("/add")
-async def add_user(email: str, password: str, salt: str, firstname: str = "", lastname: str = ""):
+async def add_user(email: str, password: str, salt: str, firstname: str = "", lastname: str = "") -> dict:
     cursor = conn.cursor()
     token = secrets.token_urlsafe(16)
     cursor.execute(
@@ -56,7 +56,7 @@ async def add_user(email: str, password: str, salt: str, firstname: str = "", la
 # Update user with email, password and optional firstname and lastname and id to access
 # Update user
 @router.put("/update/{id}")
-async def update_user(id: int, email: str, password: str, firstname: str = "", lastname: str = ""):
+async def update_user(id: int, email: str, password: str, firstname: str = "", lastname: str = "") -> dict:
     cursor = conn.cursor()
     cursor.execute(
         "UPDATE t_user SET email = %s, password = %s, firstname = %s, lastname = %s WHERE id = %s",
@@ -71,7 +71,7 @@ async def update_user(id: int, email: str, password: str, firstname: str = "", l
 
 # Delete user
 @router.delete("/del/{id}")
-async def delete_user(id: int):
+async def delete_user(id: int) -> dict:
     cursor = conn.cursor()
     cursor.execute("DELETE FROM t_user WHERE id = %s", (id,))
     if cursor.rowcount == 0:

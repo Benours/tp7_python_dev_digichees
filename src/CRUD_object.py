@@ -7,7 +7,7 @@ router = APIRouter()
 
 # Get all object
 @router.get("/all")
-async def get_all_objects():
+async def get_all_objects() -> list:
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_object")
     objects = cursor.fetchall()
@@ -17,7 +17,7 @@ async def get_all_objects():
 
 # Get object with id
 @router.get("/get/{id}")
-async def get_object_by_id(id: int):
+async def get_object_by_id(id: int) -> list:
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_object WHERE id = %s", (id,))
     object = cursor.fetchone()
@@ -31,7 +31,7 @@ async def get_object_by_id(id: int):
 # Add object with name, height, w_val (weight), description, price, stockline, shop and conditioning
 # Add object
 @router.post("/add")
-async def add_object(name: str, height: int, w_val: float, description: str, price: int, stockline: int, shop: int, conditioning: int):
+async def add_object(name: str, height: int, w_val: float, description: str, price: int, stockline: int, shop: int, conditioning: int) -> dict:
     cursor = conn.cursor()
     await add_weight(w_val)
     weight = await get_weight_by_w_val(w_val)
@@ -47,7 +47,7 @@ async def add_object(name: str, height: int, w_val: float, description: str, pri
 # Update object with name, height, w_val (weight), description, price, stockline, shop and conditioning and id to access
 # Update object
 @router.put("/update/{id}")
-async def update_object(id: int, name: str, height: int, w_val: int, description: str, price: int, stockline: int, shop: int, conditioning: int):
+async def update_object(id: int, name: str, height: int, w_val: int, description: str, price: int, stockline: int, shop: int, conditioning: int) -> dict:
     cursor = conn.cursor()
     await add_weight(w_val)
     weight = await get_weight_by_w_val(w_val)
@@ -64,7 +64,7 @@ async def update_object(id: int, name: str, height: int, w_val: int, description
 
 # Delete object
 @router.delete("/del/{id}")
-async def delete_object(id: int):
+async def delete_object(id: int) -> dict:
     cursor = conn.cursor()
     cursor.execute("DELETE FROM t_object WHERE id = %s", (id,))
     if cursor.rowcount == 0:

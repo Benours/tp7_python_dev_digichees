@@ -7,7 +7,7 @@ router = APIRouter()
 
 # Get all weights
 @router.get("/all")
-async def get_all_weights():
+async def get_all_weights() -> list:
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_weight")
     weights = cursor.fetchall()
@@ -16,7 +16,7 @@ async def get_all_weights():
 
 # Get weight with id
 @router.get("/get/{id}")
-async def get_weight_by_id(id: int):
+async def get_weight_by_id(id: int) -> list:
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_weight WHERE id = %s", (id,))
     weight = cursor.fetchone()
@@ -28,7 +28,7 @@ async def get_weight_by_id(id: int):
 # Get weight with w_val (weight)
 # Get weight by values
 @router.get("/get/{w_val}")
-async def get_weight_by_w_val(w_val: float):
+async def get_weight_by_w_val(w_val: float) -> list:
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM t_weight WHERE w_val = %s", (w_val,))
     weight = cursor.fetchone()
@@ -41,7 +41,7 @@ async def get_weight_by_w_val(w_val: float):
 # Add weight with w_val (weight)
 # Add weight
 @router.post("/add")
-async def add_weight(w_val: float):
+async def add_weight(w_val: float) -> dict:
     cursor = conn.cursor()
     cursor.execute("INSERT INTO t_weight (w_val) VALUES (%s)", (w_val,))
     conn.commit()
@@ -51,7 +51,7 @@ async def add_weight(w_val: float):
 # Update weight with w_val (weight)
 # Update weight
 @router.put("/update/{id}")
-async def update_weight(id: int, w_val: float):
+async def update_weight(id: int, w_val: float) -> dict:
     cursor = conn.cursor()
     cursor.execute(
         "UPDATE t_weight SET w_val = %s WHERE id = %s",
@@ -65,7 +65,7 @@ async def update_weight(id: int, w_val: float):
 
 # Delete weight
 @router.delete("/del/{id}")
-async def delete_weight(id: int):
+async def delete_weight(id: int) -> dict:
     cursor = conn.cursor()
     cursor.execute("DELETE FROM t_weight WHERE id = %s", (id,))
     if cursor.rowcount == 0:
