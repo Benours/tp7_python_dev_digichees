@@ -8,7 +8,7 @@
 <table class="heading">
 <tr class="heading-text decor">
 <td class="title">&nbsp;<br><strong class="title">CRUD_user</strong></td>
-<td class="extra"><a href=".">index</a><br><a href="file:/Users/benjaminbaska/PycharmProjects/tp7_python_dev_digichees/src/CRUD_user.py">/Users/benjaminbaska/PycharmProjects/tp7_python_dev_digichees/src/CRUD_user.py</a></td></tr></table>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmikae%5Conedrive%5Cbureau%5Ctp7_python_dev_digichees%5Csrc%5Ccrud_user.py">c:\users\mikae\onedrive\bureau\tp7_python_dev_digichees\src\crud_user.py</a></td></tr></table>
     <p></p>
 <p>
 <table class="section">
@@ -23,11 +23,13 @@
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
     
 <tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn"><dl><dt>async <a name="-add_user"><strong>add_user</strong></a>(email: str, password: str, firstname: str = '', lastname: str = '')</dt><dd><span class="code">#&nbsp;Add&nbsp;user&nbsp;with&nbsp;email,&nbsp;password&nbsp;and&nbsp;optional&nbsp;firstname&nbsp;and&nbsp;lastname</span></dd></dl>
- <dl><dt>async <a name="-delete_user"><strong>delete_user</strong></a>(id: int)</dt><dd><span class="code">#&nbsp;Delete&nbsp;user</span></dd></dl>
- <dl><dt>async <a name="-get_all_users"><strong>get_all_users</strong></a>()</dt><dd><span class="code">#&nbsp;Get&nbsp;all&nbsp;users</span></dd></dl>
- <dl><dt>async <a name="-get_user_by_id"><strong>get_user_by_id</strong></a>(id: int)</dt><dd><span class="code">#&nbsp;Get&nbsp;user&nbsp;with&nbsp;id</span></dd></dl>
- <dl><dt>async <a name="-update_user"><strong>update_user</strong></a>(id: int, email: str, password: str, firstname: str = '', lastname: str = '')</dt><dd><span class="code">#&nbsp;Update&nbsp;user&nbsp;with&nbsp;email,&nbsp;password&nbsp;and&nbsp;optional&nbsp;firstname&nbsp;and&nbsp;lastname&nbsp;and&nbsp;id&nbsp;to&nbsp;access</span></dd></dl>
+<td class="singlecolumn"><dl><dt>async <a name="-add_user"><strong>add_user</strong></a>(email: str, password: str, salt: str, firstname: str = '', lastname: str = '') -&gt; dict</dt><dd><span class="code">#&nbsp;Add&nbsp;user</span></dd></dl>
+ <dl><dt>async <a name="-delete_user"><strong>delete_user</strong></a>(id: int) -&gt; dict</dt><dd><span class="code">#&nbsp;Delete&nbsp;user</span></dd></dl>
+ <dl><dt>async <a name="-get_all_users"><strong>get_all_users</strong></a>() -&gt; list</dt><dd><span class="code">#&nbsp;Get&nbsp;all&nbsp;users</span></dd></dl>
+ <dl><dt>async <a name="-get_user_by_email"><strong>get_user_by_email</strong></a>(email: str) -&gt; list</dt></dl>
+ <dl><dt>async <a name="-get_user_by_id"><strong>get_user_by_id</strong></a>(id: int) -&gt; list</dt><dd><span class="code">#&nbsp;Get&nbsp;user&nbsp;with&nbsp;id</span></dd></dl>
+ <dl><dt>async <a name="-update_user"><strong>update_user</strong></a>(id: int, email: str, password: str, firstname: str = '', lastname: str = '') -&gt; dict</dt><dd><span class="code">#&nbsp;Update&nbsp;user&nbsp;with&nbsp;email,&nbsp;password&nbsp;and&nbsp;optional&nbsp;firstname&nbsp;and&nbsp;lastname&nbsp;and&nbsp;id&nbsp;to&nbsp;access<br>
+#&nbsp;Update&nbsp;user</span></dd></dl>
 </td></tr></table><p>
 <table class="section">
 <tr class="decor data-decor heading-text">
