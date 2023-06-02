@@ -7,7 +7,7 @@ app = APIRouter()
 
 # Create a new conditioning with tag, weight and price
 @app.post("/post")
-def create_conditioning(tag: str, weight: float, price: float):
+def create_conditioning(tag: str, weight: float, price: float)-> str:
     cursor = conn.cursor()
     create_weight_tag(weight)
     weightTag = get_weight_tag()
@@ -24,7 +24,7 @@ def create_conditioning(tag: str, weight: float, price: float):
 
 # Get all the conditioning
 @app.get('/getall')
-def get_conditioning():
+def get_conditioning() -> list:
     cursor = conn.cursor()
     conditioningGet = """SELECT * FROM t_conditioning"""
     cursor.execute(conditioningGet)
@@ -35,7 +35,7 @@ def get_conditioning():
 
 # Get one conditioning with id
 @app.get('/getbyid')
-def get_conditioning_by_id(id: int):
+def get_conditioning_by_id(id: int) -> list:
     cursor = conn.cursor()
     conditioningGet = "SELECT * FROM t_conditioning WHERE id=%s" % (id)
     cursor.execute(conditioningGet)
@@ -44,7 +44,7 @@ def get_conditioning_by_id(id: int):
 
 # Modify conditioning information with tag, weight and price with id to access
 @app.put("/put")
-def update_conditioning(id: int, tag: str, weight: float, price: float):
+def update_conditioning(id: int, tag: str, weight: float, price: float)-> str:
     cursor = conn.cursor()
     condition=get_conditioning().copy()
     conditId= list(condition)[:][0].index(id)
@@ -58,7 +58,7 @@ def update_conditioning(id: int, tag: str, weight: float, price: float):
 
 # Delete a conditioning
 @app.delete("/delete")
-def delete_conditioning(id: int):
+def delete_conditioning(id: int)-> str:
     cursor = conn.cursor()
     condition = get_conditioning().copy()
     conditId = list(condition)[:][0].index(id)
