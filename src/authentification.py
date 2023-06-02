@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, APIRouter
 from pydantic import BaseModel
 import bcrypt
 
-from src.CRUD_user import add_user, get_user_by_email, delete_user
+from src.CRUD_user import get_user_by_email, delete_user, add_user
 
 # Router creation to be able to add more route to the app.
 router = APIRouter()

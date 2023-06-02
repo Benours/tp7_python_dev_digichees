@@ -116,6 +116,30 @@ def test_unregister_KO_bad_token():
     assert response.status_code == 400
 
 
+#Test to see if an unregistration with a good token and an unconnected user return a status 400.
+def test_unregister_KO_unconnected():
+
+    response = clientTest.post("/authentification/login", json={
+        "email": "mikael6.ledevehat@gmail.com",
+        "password": "truc"
+    })
+
+    assert response.status_code == 200
+    jsonResponse = json.loads(response.text)
+
+    response = clientTest.post("/authentification/logout", json={
+        "token": jsonResponse["token"]
+    })
+
+    assert response.status_code == 200
+
+    response = clientTest.post("/authentification/unregister", json={
+        "token" : jsonResponse["token"]
+    })
+
+    assert response.status_code == 400
+
+
 #Test to see if an unregistration with a good token and a connected user return a status 200.
 def test_unregister():
     response = clientTest.post("/authentification/login", json={
@@ -132,35 +156,6 @@ def test_unregister():
     assert response.status_code == 200
 
 
-def test_unregister_KO_unconnected():
-    response = clientTest.post("/authentification/register", json={
-        "email": "mikael6.ledevehat@gmail.com",
-        "password": "truc",
-        "first_name": "Mikael",
-        "last_name": "Le Devehat",
-    })
-    assert response.status_code == 200
-
-    response = clientTest.post("/authentification/login", json={
-        "email": "mikael6.ledevehat@gmail.com",
-        "password": "truc"
-    })
-
-    assert response.status_code == 200
-    jsonResponse = json.loads(response.text)
-    assert jsonResponse["token"] == "1d-Dqb0V3328LU2YYjoT8w"
-
-    response = clientTest.post("/authentification/logout", json={
-        "token": "1d-Dqb0V3328LU2YYjoT8w"
-    })
-
-    assert response.status_code == 200
-
-    response = clientTest.post("/authentification/unregister", json={
-        "token" : jsonResponse["token"]
-    })
-
-    assert response.status_code == 200
 
 
 if __name__ == "__main__":
