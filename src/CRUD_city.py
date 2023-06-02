@@ -4,9 +4,8 @@ from src.connect import conn
 
 app = APIRouter()
 
-
-# on import fastapi pour swagger et conn qui est dans connect.py qui
-# permet la connection avec la base de donnée
+# We import FastApi and uvicorn to use swagger.
+# Connect.py allow the connection to the database.
 
 # Create a new city with ZIPCode, name and department
 @app.post("/post")
@@ -24,7 +23,7 @@ def create_city(zipCode: str, name: str, department: str) -> str:
 
 # Get all the cities
 @app.get('/getall')
-def get_city() -> list:
+def get_all_city() -> list:
     cursor = conn.cursor()
     cityGet = """SELECT * FROM t_city"""
     cursor.execute(cityGet)

@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from src.CRUD_weight_tag import create_weight_tag, get_weight_tag, update_weight_tag, delete_weight_tag
+from src.CRUD_weight_tag import create_weight_tag, get_all_weight_tag, update_weight_tag, delete_weight_tag
 from src.connect import conn
 
 app = APIRouter()
@@ -10,7 +10,7 @@ app = APIRouter()
 def create_conditioning(tag: str, weight: float, price: float)-> str:
     cursor = conn.cursor()
     create_weight_tag(weight)
-    weightTag = get_weight_tag()
+    weightTag = get_all_weight_tag()
     weight = list(weightTag[len(weightTag) - 1])[0]
     conditioningInsert = """INSERT INTO t_conditioning(
         tag,
@@ -24,7 +24,7 @@ def create_conditioning(tag: str, weight: float, price: float)-> str:
 
 # Get all the conditioning
 @app.get('/getall')
-def get_conditioning() -> list:
+def get_all_conditioning() -> list:
     cursor = conn.cursor()
     conditioningGet = """SELECT * FROM t_conditioning"""
     cursor.execute(conditioningGet)
@@ -46,7 +46,7 @@ def get_conditioning_by_id(id: int) -> list:
 @app.put("/put")
 def update_conditioning(id: int, tag: str, weight: float, price: float)-> str:
     cursor = conn.cursor()
-    condition=get_conditioning().copy()
+    condition=get_all_conditioning().copy()
     conditId= list(condition)[:][0].index(id)
     weightId=list(condition)[conditId][2]
     # print(weightId)
@@ -60,7 +60,7 @@ def update_conditioning(id: int, tag: str, weight: float, price: float)-> str:
 @app.delete("/delete")
 def delete_conditioning(id: int)-> str:
     cursor = conn.cursor()
-    condition = get_conditioning().copy()
+    condition = get_all_conditioning().copy()
     conditId = list(condition)[:][0].index(id)
     # print(conditId)
     weightId = list(condition)[conditId][2]

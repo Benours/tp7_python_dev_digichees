@@ -5,7 +5,7 @@ from src.connect import conn
 app = APIRouter()
 
 # Create a new tag weight with tagvalues (weight)
-@app.post("/post")
+@app.post("/create")
 def create_weight_tag(tagValues: float)-> str:
     cursor = conn.cursor()
     weightTagInsert = """INSERT INTO t_weight_tag (tagValues) VALUES (%s)""" % tagValues
@@ -15,7 +15,7 @@ def create_weight_tag(tagValues: float)-> str:
 
 # Get all the tag weight
 @app.get('/getall')
-def get_weight_tag() -> list:
+def get_all_weight_tag() -> list:
     cursor = conn.cursor()
     weightTagGet = """SELECT * FROM t_weight_tag"""
     cursor.execute(weightTagGet)
